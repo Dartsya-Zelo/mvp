@@ -1,0 +1,1190 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>1 MVP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./bcSwipe/jquery.bcSwipe.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-nav-top d-none d-md-block">
+            <div class="container">
+                <div class="text-right">
+                    <a href="#">О компании</a>
+                    |
+                    <span class="login" data-contents="#head-accunt-lg" data-toggle="popover">Имя <i class="fas fa-sort-down"></i></span>
+                    |
+                    <span class="login" data-contents="#head-login-lg" data-toggle="popover">Вход <i class="fas fa-sort-down"></i></span>
+                    |
+                    <a href="#">RU</a>
+                </div>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="head-login-lg">
+                <form action="" style="padding: 1.5em 1.5em 0.5em">
+                    <div class="form-group"><input type="email" class="form-control" placeholder="Email"></div>
+                    <div class="form-group"><input type="password" class="form-control" placeholder="Пароль"></div>
+                    <div class="form-group"><button class="btn btn-block btn-primary" type="submit">Войти</button></div>
+                    <div class="form-group"><a href="#" class="btn btn-block btn-primary">Зарегистрироваться</a></div>
+                    <div class="text-center"><a href="#" class="forgot text-info">Забыли пароль?</a></div>
+                </form>
+            </div>
+            <div id="head-accunt-lg">
+                <ul class="account-links">
+                    <li><a href="#" class="text-dark">Личный кабинет</a></li>
+                    <li><a href="#" class="text-dark">Сообщения</a><span>5</span></li>
+                    <li><a href="#" class="text-dark">Заявки</a><span>15</span></li>
+                    <li><a href="#" class="text-dark">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="top-navbar" class="collapse d-md-none">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col text-left">
+                        <a class="mr-4" href="#"><span class="logo"></span></a>
+                    </div>
+                    <div class="col text-right">
+                        <a href="#" class="close" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">&times;</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 main-menu">
+                        <div class="search-form">
+                            <form action="#">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="custom-select">
+                                            <option value="catgory" selected>Категории</option>
+                                            <option value="product">Товары</option>
+                                            <option value="">....</option>
+                                        </select>
+                                    </div>
+                                    <input class="form-control" type="search" placeholder="" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-link search" type="submit"></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="login">
+                            <a data-toggle="collapse" href="#header-login-sm" role="button" aria-expanded="false" aria-controls="header-login-sm">Вход</a>
+                            <div id="header-login-sm" class="collapse">
+                                <form action="">
+                                    <div class="form-group"><input type="email" class="form-control" placeholder="Email"></div>
+                                    <div class="form-group"><input type="password" class="form-control" placeholder="Пароль"></div>
+                                    <div class="form-group"><button class="btn btn-block btn-outline-light" type="submit">Войти</button></div>
+                                    <div class="form-group"><a href="#" class="btn btn-block btn-outline-light">Зарегистрироваться</a></div>
+                                    <div class="form-group text-center"><a href="#" class="forgot">Забыли пароль?</a></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="account">
+                            <a data-toggle="collapse" href="#header-account-sm" role="button" aria-expanded="false" aria-controls="header-account-sm">Имя</a>
+                            <div id="header-account-sm" class="collapse">
+                                <ul>
+                                    <li><a href="#">Личный кабинет</a></li>
+                                    <li><a href="#">Сообщения</a><span>5</span></li>
+                                    <li><a href="#">Заявки</a><span>15</span></li>
+                                    <li><a href="#">Выйти</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="language">
+                            Выберите язык
+                            <span class="links">
+                                <!-- alternative without link for current language -->
+                                <!-- <span>RU</span> -->
+                                <a href="#" class="current">RU</a>
+                                <a href="#">EN</a>
+                            </span>
+                        </div>
+                        <div class="link">
+                            <a href="#">О компании</a>
+                        </div>
+                        <div class="cart-block">
+                            <a href="#">Корзина</a><span>8 000 руб</span>
+                        </div>
+                        <div>
+                            <div class="order-btn"><button type="button" class="btn btn-outline-light btn-block">Заявки</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-top-menu">
+            <nav class="navbar navbar-light navbar-expand-md">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="d-md-none navbar-sm-custom">
+                        <a class="navbar-brand" href="#"><span class="logo"></span></a>
+                        <div class="navbar-text">
+                            <button class="btn btn-link my-2 my-sm-0 search" type="submit"></button>
+                            <div class='counter'>
+                                <span class="cart"></span><span>3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <a class="navbar-brand mr-4 mr-md-3" href="#"><span class="logo"></span></a>
+                        <form style="flex-grow: 2">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <select class="custom-select">
+                                        <option value="catgory" selected>Категории</option>
+                                        <option value="product">Товары</option>
+                                        <option value="">....</option>
+                                    </select>
+                                </div>
+                                <input class="form-control" type="search" placeholder="" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-link my-2 my-sm-0 search" type="submit"></button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="navbar-text mr-4 ml-4 mr-md-2 ml-md-2" id="cart">
+                            <div class='counter mr-2'>
+                                <span class="cart"></span><span>3</span></div>
+                                <div class="d-none d-lg-inline d-xl-inline">800 RUR</div>
+                        </div>
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" id="orders" type="submit">Заявки</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="d-flex d-lg-none filter">
+            <div class="items">
+                <div><button type="button" class="btn btn-link" data-toggle="popover">Location</button></div>
+                <div><button type="button" class="btn btn-link" data-toggle="popover">Category</button></div>
+                <div><button type="button" class="btn btn-link" data-toggle="popover">brands</button></div>
+                <div><button type="button" class="btn btn-link" data-toggle="popover">price</button></div>
+                <div><button type="button" class="btn btn-link" data-toggle="popover">цвет</button></div>
+                <div><button type="button" class="btn btn-link" data-toggle="popover">материал</button></div>
+                <div><button type="button" class="btn btn-link" data-toggle="popover">габариты</button></div>
+            </div>
+            <div class="refine">
+                <button class="btn btn-link text-body" type="button" data-toggle="modal" data-target="#refine-dialog" data-backdrop="static"><i class="fas fa-filter mr-1"></i>Refine</button>
+            </div>
+        </div>
+        <div id="place"></div>
+        <div class="row search-block">
+            <div class="d-none d-lg-block col-12 col-lg-3">
+                <div class="position-sticky">
+                    <div class="box">
+                        <div class="filter-title" data-toggle="collapse" data-target="#category-filter" aria-controls="category-filter" aria-expanded="false" aria-label="Toggle category filter">CATEGORY</div>
+                        <ul class="list-filter collapse show" id="category-filter">
+                            <li class="list-filter-item-title">
+                                <span><a href="#">AGRICULTURE</a>
+                                    <span class="count">120</span>
+                                </span>
+                                <ul class="list-filter">
+                                    <li class="list-filter-item"><a href="#">Agricultural Growing Media</a><span class="count">15</span></li>
+                                    <li class="list-filter-item"><a href="#">Agricultural Waste</a> <span class="count">34</span></li>
+                                </ul>
+                            </li>
+                            <li class="list-filter-item-title">
+                                <span><a href="#">APPAREL</a>
+                                    <span class="count">120</span>
+                                </span>
+                                <ul class="list-filter">
+                                    <li class="list-filter-item"><a href="#">Agricultural Growing Media</a><span class="count">15</span></li>
+                                    <li class="list-filter-item"><a href="#">Agricultural Waste</a> <span class="count">34</span></li>
+                                </ul>
+                            </li>
+                            <li class="list-filter-item-title">
+                                <span><a href="#">AUTO & TRANSPORTATION</a>
+                                    <span class="count">120</span>
+                                </span>
+                                <ul class="list-filter">
+                                    <li class="list-filter-item"><a href="#">Agricultural Growing Media</a><span class="count">15</span></li>
+                                    <li class="list-filter-item"><a href="#">Agricultural Waste</a> <span class="count">34</span></li>
+                                </ul>
+                            </li>
+                            <li class="list-filter-item-title">
+                                <span><a href="#">CONSTRUCTION</a>
+                                    <span class="count">120</span>
+                                </span>
+                                <ul class="list-filter">
+                                    <li class="list-filter-item"><a href="#">Agricultural Growing Media</a><span class="count">15</span></li>
+                                    <li class="list-filter-item"><a href="#">Agricultural Waste</a> <span class="count">34</span></li>
+                                </ul>
+                            </li>
+                            <li class="list-filter-item-title">
+                                <span><a href="#">ELECTRICAL EQUIPMENTS & TELECOMMUNICATION</a>
+                                    <span class="count">120</span>
+                                </span>
+                                <ul class="list-filter">
+                                    <li class="list-filter-item"><a href="#">Agricultural Growing Media</a><span class="count">15</span></li>
+                                    <li class="list-filter-item"><a href="#">Agricultural Waste</a> <span class="count">34</span></li>
+                                </ul>
+                            </li>
+                            <li class="list-filter-item-title">
+                                <span><a href="#">ELECTRONICS</a>
+                                    <span class="count">120</span>
+                                </span>
+                                <ul class="list-filter">
+                                    <li class="list-filter-item"><a href="#">Agricultural Growing Media</a><span class="count">15</span></li>
+                                    <li class="list-filter-item"><a href="#">Agricultural Waste</a> <span class="count">34</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <div class="filter-title" data-toggle="collapse" data-target="#brand-filter" aria-controls="brand-filter" aria-expanded="false" aria-label="Toggle price filter">BRANDS</div>
+                        <ul class="list-filter collapse show" id="brand-filter">
+                            <li class="list-filter-item">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Rebook</label>
+                                <span class="count">15</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Adidas</label>
+                                <span class="count">34</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Rebook</label>
+                                <span class="count">15</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Adidas</label>
+                                <span class="count">34</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Rebook</label>
+                                <span class="count">15</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Adidas</label>
+                                <span class="count">34</span>
+                            </li>
+                            <li class="list-filter-item collapse brand-filter-more">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Adidas</label>
+                                <span class="count">6</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Rebook</label>
+                                <span class="count">15</span>
+                            </li>
+                            <li class="list-filter-item collapse brand-filter-more">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Rebook</label>
+                                <span class="count">3</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <label class="form-check-label"><input type="checkbox" value="adidas" name="brand[]"><i class="fas fa-fw"></i> Adidas</label>
+                                <span class="count">34</span>
+                            </li>
+                            <li class="list-filter-link">
+                                <a href="#" class="text-info alt" data-target=".brand-filter-more" data-toggle="collapse">
+                                    <span class="more">Смотреть все</span>
+                                    <span class="less">скрыть</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <div class="filter-title" data-toggle="collapse" data-target="#price-filter" aria-controls="price-filter" aria-expanded="false" aria-label="Toggle price filter">PRICE</div>
+                        <ul class="list-filter collapse show" id="price-filter">
+                            <li class="list-filter-item"><input type="text" class="form-control" name="from" value="1500">до<input type="text" class="form-control" name="to" value="25000"></li>
+                            <li class="list-filter-link"><button type="button" class="btn btn-primary mt-2">Сортировать</button></li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <div class="filter-title" data-toggle="collapse" data-target="#country-filter" aria-controls="country-filter" aria-expanded="false" aria-label="Toggle country filter">Казахстан</div>
+                        <ul class="list-filter collapse show" id="country-filter">
+                            <li class="list-filter-item"><a href="#">Астана</a><span class="count">15</span></li>
+                            <li class="list-filter-item"><a href="#">Алматы</a><span class="count">34</span></li>
+                            <li class="list-filter-item"><a href="#">Актау</a><span class="count">15</span></li>
+                            <li class="list-filter-item"><a href="#">Актобе</a><span class="count">34</span></li>
+                            <li class="list-filter-item"><a href="#">Атырау</a><span class="count">15</span></li>
+                            <li class="list-filter-item"><a href="#">Караганда</a><span class="count">34</span></li>
+                            <li class="list-filter-item"><a href="#">Кокшетау</a><span class="count">15</span></li>
+                            <li class="list-filter-item"><a href="#">Костанай</a><span class="count">34</span></li>
+                            <li class="list-filter-item country-filter-more collapse"><a href="#">Караганда</a><span class="count">34</span></li>
+                            <li class="list-filter-item country-filter-more collapse"><a href="#">Кокшетау</a><span class="count">15</span></li>
+                            <li class="list-filter-item country-filter-more collapse"><a href="#">Костанай</a><span class="count">34</span></li>
+                            <li class="list-filter-link">
+                                <a href="#" class="text-info alt" data-target=".country-filter-more" data-toggle="collapse">
+                                    <span class="more">Смотреть все</span>
+                                    <span class="less">скрыть</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-9">
+                <div class="d-none d-lg-flex row row-separator mt-1">
+                    <div class="col-auto">Похожие запросы: <span>Бумага Ф4, Бумажный пакет, картон, картонная коробка</span></div>
+                </div>
+                <ul class="nav nav-tabs d-none d-md-flex" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#product" id="tab-product" data-toggle="list" role="tab" aria-controls="product">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#suppliers" id="tab-suppliers" data-toggle="list" role="tab" aria-controls="suppliers">Suppliers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" id="tab-services" data-toggle="list" role="tab" aria-controls="services">Services</a>
+                    </li>
+                </ul>
+                <div class="box">
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="product" role="tabpanel" aria-labelledby="tab-product">
+                            <div class="row">
+                                <div class="col-3">Supplier tipes:</div>
+                                <div class="col-9"><label class="form-check-label"><input type="checkbox" value="1" name="verified"><i class="fas fa-fw"></i> <img src="./images/label-verified.png" alt=""> Verified Supplier</label></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Supplier location:</div>
+                                <div class="col col-md-auto">
+                                    <select name="region" id="" class="custom-select">
+                                        <option value="">All countries and regions</option>
+                                        <option value="">...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show active" id="suppliers" role="tabpanel" aria-labelledby="tab-suppliers">
+                            <div class="row">
+                                <div class="col-3">Supplier tipes:</div>
+                                <div class="col-9"><label class="form-check-label"><input type="checkbox" value="1" name="verified"><i class="fas fa-fw"></i> <img src="./images/label-verified.png" alt=""> Verified Supplier</label></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Supplier location:</div>
+                                <div class="col col-md-auto">
+                                    <select name="region" id="" class="custom-select">
+                                        <option value="">All countries and regions</option>
+                                        <option value="">...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="tab-services">
+                            <div class="row">
+                                <div class="col-3">Supplier tipes:</div>
+                                <div class="col-9"><label class="form-check-label"><input type="checkbox" value="1" name="verified"><i class="fas fa-fw"></i> <img src="./images/label-verified.png" alt=""> Verified Supplier</label></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Supplier location:</div>
+                                <div class="col col-md-auto">
+                                    <select name="region" id="" class="custom-select">
+                                        <option value="">All countries and regions</option>
+                                        <option value="">...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-separator">
+                    <div class="col-auto mb-1">View: <span>4 581 225 products</span></div>
+                    <div class="col-auto min-order mb-1">Min order: <input type="text" class="form-control" placeholder="less than"></div>
+                    <div class="col-auto price mb-1">Price: <input type="text" class="form-control"> -  <input type="text" class="form-control"></div>
+                    <div class="col-auto mb-1"><label class="form-check-label"><input type="checkbox" value="1" name="online"><i class="fas fa-fw"></i> Online</label></div>
+                    <div class="col-auto min-order mb-1">Sort by: <select name="sort-by" class="custom-select">
+                        <option value="">Best match</option>
+                        <option value="">Best match</option>
+                        <option value="">Best match</option>
+                    </select></div>
+                </div>
+                <div class="box">
+                    <div class="search-supplier-block">
+                        <div class="supplier-title">Бумага Ballet Classic, A4, 80u/м2, 153% 500 л</div>
+                        <div class="supplier-products">
+                            <div id="products-supplier-1" class="carousel slide" data-ride="carousel" data-interval="false">
+                                <div class="carousel-inner d-flex" role="listbox">
+                                    <div class="carousel-item active">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#products-supplier-1" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next text-faded" href="#products-supplier-1" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="supplier-description">
+                            <dl class="row">
+                                <dt class="col-4 col-md-12 col-lg-4 col-xl-3">Main Products:</dt>
+                                <dd class="col-8 col-md-12 col-lg-8 col-xl-9">Blister Packing Machine, Wrapping Machine, Hot Stamping Machine, Heat Trans...</dd>
+                                <dt class="col-4 col-md-12 col-lg-4 col-xl-3">Country/Region:</dt>
+                                <dd class="col-8 col-md-12 col-lg-8 col-xl-9">China (Mainland)</dd>
+                                <dt class="col-4 col-md-12 col-lg-4 col-xl-3">Categories:</dt>
+                                <dd class="col-8 col-md-12 col-lg-8 col-xl-9">Machinery, Car Tools, Office supplies</dd>
+                            </dl>
+                        </div>
+                        <div class="supplier-info">
+                            <ul class="supplier-info-list icons">
+                                <li><img src="./images/label-verified.png" alt="verified"> Verified Supplier</li>
+                                <li><img src="./images/label-1-year.png" alt="1 year"> 1 год на портале</li>
+                            </ul>
+                            <ul class="supplier-info-list">
+                                <li><i class="fas fa-fw fa-map-marker-alt"></i><a href="#" class="text-dark alt">Караганда</a></li>
+                                <li><i class="fas fa-fw fa-flip-horizontal fa-phone"></i><a href="#" class="text-dark alt">Показать телефон</a></li>
+                                <li><i class="fas fa-fw fa-globe"></i><a href="#" class="text-info alt">lisgospiskar.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="search-supplier-block">
+                        <div class="supplier-title">Бумага Ballet Classic, A4, 80u/м2, 153% 500 л</div>
+                        <div class="supplier-products">
+                            <div id="products-supplier-2" class="carousel slide" data-ride="carousel" data-interval="false">
+                                <div class="carousel-inner d-flex" role="listbox">
+                                    <div class="carousel-item active">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#products-supplier-2" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next text-faded" href="#products-supplier-2" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="supplier-description">
+                            <dl class="row">
+                                <dt class="col-lg-4 col-xl-3">Main Products:</dt>
+                                <dd class="col-lg-8 col-xl-9">Blister Packing Machine, Wrapping Machine, Hot Stamping Machine, Heat Trans...</dd>
+                                <dt class="col-lg-4 col-xl-3">Country/Region:</dt>
+                                <dd class="col-lg-8 col-xl-9">China (Mainland)</dd>
+                                <dt class="col-lg-4 col-xl-3">Categories:</dt>
+                                <dd class="col-lg-8 col-xl-9">Machinery, Car Tools, Office supplies</dd>
+                            </dl>
+                        </div>
+                        <div class="supplier-info">
+                            <ul class="supplier-info-list icons">
+                                <li><img src="./images/label-1-year.png" alt="1 year"> <span class="no-sm">1 год на портале</span></li>
+                                <li><img src="./images/label-verified.png" alt="verified"> <span class="no-sm">Verified Supplier</span></li>
+                            </ul>
+                            <ul class="supplier-info-list">
+                                <li><i class="fas fa-fw fa-map-marker-alt"></i><a href="#" class="text-dark alt">Караганда</a></li>
+                                <li><i class="fas fa-fw fa-flip-horizontal fa-phone"></i><a href="#" class="text-dark alt">Показать телефон</a></li>
+                                <li><i class="fas fa-fw fa-globe"></i><a href="#" class="text-info alt">lisgospiskar.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="search-supplier-block">
+                        <div class="supplier-title">Бумага Ballet Classic, A4, 80u/м2, 153% 500 л</div>
+                        <div class="supplier-products">
+                            <div id="products-supplier-3" class="carousel slide" data-ride="carousel" data-interval="false">
+                                <div class="carousel-inner d-flex" role="listbox">
+                                    <div class="carousel-item active">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#products-supplier-3" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next text-faded" href="#products-supplier-3" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="supplier-description">
+                            <dl class="row">
+                                <dt class="col-lg-4 col-xl-3">Main Products:</dt>
+                                <dd class="col-lg-8 col-xl-9">Blister Packing Machine, Wrapping Machine, Hot Stamping Machine, Heat Trans...</dd>
+                                <dt class="col-lg-4 col-xl-3">Country/Region:</dt>
+                                <dd class="col-lg-8 col-xl-9">China (Mainland)</dd>
+                                <dt class="col-lg-4 col-xl-3">Categories:</dt>
+                                <dd class="col-lg-8 col-xl-9">Machinery, Car Tools, Office supplies</dd>
+                            </dl>
+                        </div>
+                        <div class="supplier-info">
+                            <ul class="supplier-info-list icons">
+                                <li><img src="./images/label-1-year.png" alt="1 year"> <span class="no-sm">1 год на портале</span></li>
+                                <li><img src="./images/label-verified.png" alt="verified"> <span class="no-sm">Verified Supplier</span></li>
+                            </ul>
+                            <ul class="supplier-info-list">
+                                <li><i class="fas fa-fw fa-map-marker-alt"></i><a href="#" class="text-dark alt">Караганда</a></li>
+                                <li><i class="fas fa-fw fa-flip-horizontal fa-phone"></i><a href="#" class="text-dark alt">Показать телефон</a></li>
+                                <li><i class="fas fa-fw fa-globe"></i><a href="#" class="text-info alt">lisgospiskar.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="search-supplier-block">
+                        <div class="supplier-title">Бумага Ballet Classic, A4, 80u/м2, 153% 500 л</div>
+                        <div class="supplier-products">
+                            <div id="products-supplier-4" class="carousel slide" data-ride="carousel" data-interval="false">
+                                <div class="carousel-inner d-flex" role="listbox">
+                                    <div class="carousel-item active">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#products-supplier-4" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next text-faded" href="#products-supplier-4" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="supplier-description">
+                            <dl class="row">
+                                <dt class="col-4 col-md-12 col-lg-4 col-xl-3">Main Products:</dt>
+                                <dd class="col-8 col-md-12 col-lg-8 col-xl-9">Blister Packing Machine, Wrapping Machine, Hot Stamping Machine, Heat Trans...</dd>
+                                <dt class="col-4 col-md-12 col-lg-4 col-xl-3">Country/Region:</dt>
+                                <dd class="col-8 col-md-12 col-lg-8 col-xl-9">China (Mainland)</dd>
+                                <dt class="col-4 col-md-12 col-lg-4 col-xl-3">Categories:</dt>
+                                <dd class="col-8 col-md-12 col-lg-8 col-xl-9">Machinery, Car Tools, Office supplies</dd>
+                            </dl>
+                        </div>
+                        <div class="supplier-info">
+                            <ul class="supplier-info-list icons">
+                                <li><img src="./images/label-verified.png" alt="verified"> Verified Supplier</li>
+                                <li><img src="./images/label-1-year.png" alt="1 year"> 1 год на портале</li>
+                            </ul>
+                            <ul class="supplier-info-list">
+                                <li><i class="fas fa-fw fa-map-marker-alt"></i><a href="#" class="text-dark alt">Караганда</a></li>
+                                <li><i class="fas fa-fw fa-flip-horizontal fa-phone"></i><a href="#" class="text-dark alt">Показать телефон</a></li>
+                                <li><i class="fas fa-fw fa-globe"></i><a href="#" class="text-info alt">lisgospiskar.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="search-supplier-block">
+                        <div class="supplier-title">Бумага Ballet Classic, A4, 80u/м2, 153% 500 л</div>
+                        <div class="supplier-products">
+                            <div id="products-supplier-5" class="carousel slide" data-ride="carousel" data-interval="false">
+                                <div class="carousel-inner d-flex" role="listbox">
+                                    <div class="carousel-item active">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#products-supplier-5" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next text-faded" href="#products-supplier-5" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="supplier-description">
+                            <dl class="row">
+                                <dt class="col-lg-4 col-xl-3">Main Products:</dt>
+                                <dd class="col-lg-8 col-xl-9">Blister Packing Machine, Wrapping Machine, Hot Stamping Machine, Heat Trans...</dd>
+                                <dt class="col-lg-4 col-xl-3">Country/Region:</dt>
+                                <dd class="col-lg-8 col-xl-9">China (Mainland)</dd>
+                                <dt class="col-lg-4 col-xl-3">Categories:</dt>
+                                <dd class="col-lg-8 col-xl-9">Machinery, Car Tools, Office supplies</dd>
+                            </dl>
+                        </div>
+                        <div class="supplier-info">
+                            <ul class="supplier-info-list icons">
+                                <li><img src="./images/label-1-year.png" alt="1 year"> <span class="no-sm">1 год на портале</span></li>
+                                <li><img src="./images/label-verified.png" alt="verified"> <span class="no-sm">Verified Supplier</span></li>
+                            </ul>
+                            <ul class="supplier-info-list">
+                                <li><i class="fas fa-fw fa-map-marker-alt"></i><a href="#" class="text-dark alt">Караганда</a></li>
+                                <li><i class="fas fa-fw fa-flip-horizontal fa-phone"></i><a href="#" class="text-dark alt">Показать телефон</a></li>
+                                <li><i class="fas fa-fw fa-globe"></i><a href="#" class="text-info alt">lisgospiskar.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="search-supplier-block">
+                        <div class="supplier-title">Бумага Ballet Classic, A4, 80u/м2, 153% 500 л</div>
+                        <div class="supplier-products">
+                            <div id="products-supplier-6" class="carousel slide" data-ride="carousel" data-interval="false">
+                                <div class="carousel-inner d-flex" role="listbox">
+                                    <div class="carousel-item active">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item" >
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="card">
+                                            <a href="#">
+                                                <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                            <div class="card-body">
+                                                Paper Jeather and plastic hot press
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#products-supplier-6" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next text-faded" href="#products-supplier-6" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="supplier-description">
+                            <dl class="row">
+                                <dt class="col-lg-4 col-xl-3">Main Products:</dt>
+                                <dd class="col-lg-8 col-xl-9">Blister Packing Machine, Wrapping Machine, Hot Stamping Machine, Heat Trans...</dd>
+                                <dt class="col-lg-4 col-xl-3">Country/Region:</dt>
+                                <dd class="col-lg-8 col-xl-9">China (Mainland)</dd>
+                                <dt class="col-lg-4 col-xl-3">Categories:</dt>
+                                <dd class="col-lg-8 col-xl-9">Machinery, Car Tools, Office supplies</dd>
+                            </dl>
+                        </div>
+                        <div class="supplier-info">
+                            <ul class="supplier-info-list icons">
+                                <li><img src="./images/label-1-year.png" alt="1 year"> <span class="no-sm">1 год на портале</span></li>
+                                <li><img src="./images/label-verified.png" alt="verified"> <span class="no-sm">Verified Supplier</span></li>
+                            </ul>
+                            <ul class="supplier-info-list">
+                                <li><i class="fas fa-fw fa-map-marker-alt"></i><a href="#" class="text-dark alt">Караганда</a></li>
+                                <li><i class="fas fa-fw fa-flip-horizontal fa-phone"></i><a href="#" class="text-dark alt">Показать телефон</a></li>
+                                <li><i class="fas fa-fw fa-globe"></i><a href="#" class="text-info alt">lisgospiskar.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous page</a></li>
+                        <li class="page-item active"><span class="page-link" href="#">1</span></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next page</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="compare-block">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-6 col-lg-3 col-xl">
+                            <div class="item">
+                                <a href="#" class="remove"><i class="fas fa-times"></i></a>
+                                <img src="./images/product_3.png" alt="">Бумага Ballet Classic, A4, 80 г/м2, 153% 500
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-xl">
+                            <div class="item">
+                                <a href="#" class="remove"><i class="fas fa-times"></i></a>
+                                <img src="./images/product_3.png" alt="">Бумага Ballet Classic, A4, 80 г/м2, 153% 500
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-xl">
+                            <div class="item">
+                                <a href="#" class="remove"><i class="fas fa-times"></i></a>
+                                <img src="./images/product_3.png" alt="">Бумага Ballet Classic, A4, 80 г/м2, 153% 500
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-xl">
+                            <div class="item">
+                                <a href="#" class="remove"><i class="fas fa-times"></i></a>
+                                <img src="./images/product_3.png" alt="">Бумага Ballet Classic, A4, 80 г/м2, 153% 500
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-xl">
+                            <div class="item">
+                                <a href="#" class="remove"><i class="fas fa-times"></i></a>
+                                <img src="./images/product_3.png" alt="">Бумага Ballet Classic, A4, 80 г/м2, 153% 500
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-xl">
+                            <div class="item">
+                                <a href="#" class="remove"><i class="fas fa-times"></i></a>
+                                <img src="./images/product_3.png" alt="">Бумага Ballet Classic, A4, 80 г/м2, 153% 500
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto"><button type="button" class="btn btn-primary mr-3">Сравнить (6/20)</button><a href="" class="text-white alt">Очистить</a></div>
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <div class="footer-socials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 fas fa-phone-volume"></i>0900 800 45 45</div>
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 far fa-envelope"></i>example@mail.ru</div>
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 fas fa-map-marker-alt"></i>ул. Аванова 32б оф.234</div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-12 text-center text-lg-right icons">
+                        <i class="mr-3 fab fa-facebook-f"></i>
+                        <i class="mr-3 fab fa-vk"></i>
+                        <i class="mr-3 fab fa-youtube"></i>
+                        <i class="mr-3 fab fa-skype"></i>
+                        <i class="mr-3 fab fa-whatsapp"></i>
+                        <i class="mr-3 fab fa-telegram-plane"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-nav-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Электроника</h3>
+                        <ul>
+                            <li><a href="">Мобильные телефоны</a></li>
+                            <li><a href="">Планшеты</a></li>
+                            <li><a href="">Ноутбуки</a></li>
+                            <li><a href="">Бытовая техника</a></li>
+                            <li><a href="">Камеры, фото и видео </a></li>
+                            <li><a href="">Телевизоры</a></li>
+                            <li><a href="">Наушники</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Мода</h3>
+                        <ul>
+                            <li><a href="">Женская мода</a></li>
+                            <li><a href="">Мужская мода</a></li>
+                            <li><a href="">Мода для девочек</a></li>
+                            <li><a href="">Мода для малчиков</a></li>
+                            <li><a href="">Часы</a></li>
+                            <li><a href="">Ювелирные изделия</a></li>
+                            <li><a href="">Женские сумочки</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Дом и кухня</h3>
+                        <ul>
+                            <li><a href="">Ванна</a></li>
+                            <li><a href="">Домашний декор</a></li>
+                            <li><a href="">Кухня и столовая</a></li>
+                            <li><a href="">Инструменты</a></li>
+                            <li><a href="">Аудио и видео</a></li>
+                            <li><a href="">Мебель</a></li>
+                            <li><a href="">Патио. Газон и сад</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Красота</h3>
+                        <ul>
+                            <li><a href="">Духи</a></li>
+                            <li><a href="">Макияж</a></li>
+                            <li><a href="">Уход за кожей</a></li>
+                            <li><a href="">Инструменты и акссесуары</a></li>
+                            <li><a href="">Для мужчин</a></li>
+                            <li><a href="">Витамины</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Для детей</h3>
+                        <ul>
+                            <li><a href="">Коляски</a></li>
+                            <li><a href="">Автокресла</a></li>
+                            <li><a href="">Питание</a></li>
+                            <li><a href="">Купинае и уход за кожей</a></li>
+                            <li><a href="">Детская одежда и обувь</a></li>
+                            <li><a href="">Детские игрушки</a></li>
+                            <li><a href="">Детское питание</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Бренды</h3>
+                        <ul>
+                            <li><a href="">Mothercare</a></li>
+                            <li><a href="">Apple</a></li>
+                            <li><a href="">Nike</a></li>
+                            <li><a href="">Samsung</a></li>
+                            <li><a href="">Tefal</a></li>
+                            <li><a href="">L'oreal Paris</a> </li>
+                            <li><a href="">Skechers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-8 col-12 order-lg-first order-last text-center text-lg-left">2017 QRP.com. All rights reserved</div>
+                    <div class="col-lg-4 col-12 order-lg-last order-first text-center text-lg-right">
+                        <ul>
+                            <li><a href="">Карьера</a></li>
+                            <li><a href="">Гарантии</a></li>
+                            <li><a href="">Условия использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="d-none">
+        <div id="filter-sm-block">
+            <div class="items">
+                <span>Almaty</span>
+                <span>Kazakhstan</span>
+                <span>Moscow</span>
+                <span>India</span>
+                <span>Turkey</span>
+            </div>
+            <div class="action"><button class="btn btn-block btn-link text-dark">ОЧИСТИТЬ</button></div>
+        </div>
+    </div>
+    <div class="modal" id="refine-dialog" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="tab-content nav">
+                <div class="modal-content tab-pane show active" id="root-filter-sm" role="tabpanel">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title">Refine</h5>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-filter">
+                            <li class="list-filter-item">
+                                <a href="#category-filter-sm" data-toggle="tab">Location</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <a href="#category-filter-sm" data-toggle="tab">Category</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <a href="#category-filter-sm" data-toggle="tab">Brands</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <a href="#category-filter-sm" data-toggle="tab">Price</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <a href="#category-filter-sm" data-toggle="tab">Цвет</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item root-filter-sm-list collapse">
+                                <a href="#category-filter-sm" data-toggle="tab">Габариты</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <a href="#category-filter-sm" data-toggle="tab">Материал</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item root-filter-sm-list collapse">
+                                <a href="#category-filter-sm" data-toggle="tab">Параметр</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item root-filter-sm-list collapse">
+                                <a href="#category-filter-sm" data-toggle="tab">Параметр</a>
+                                <span class="filter-value">All</span>
+                            </li>
+                            <li class="list-filter-item">
+                                <span></span>
+                                <button data-target=".root-filter-sm-list" data-toggle="collapse" class="btn-toggler">
+                                    <span class="more">показать больше</span>
+                                    <span class="less">скрыть</span>
+                                </button>
+                            </li>
+                        </ul>
+                        <ul class="list-filter icons">
+                            <li class="logo list-filter-item"><span><img src="./images/company-logo-1-xs.jpg" alt="Sundali"> Sundali</span> <label class="toggler"><input type="checkbox"><span></span></label></li>
+                            <li class="list-filter-item"><span><img src="./images/label-1-year.png" alt="1 year"> 1 год на портале</span> <label class="toggler"><input type="checkbox"><span></span></label></li>
+                            <li class="list-filter-item"><span><img src="./images/label-verified.png" alt="verified"> Verified Supplier</span> <label class="toggler"><input type="checkbox"><span></span></label></li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link text-dark">Очистить</button>
+                        <button type="button" class="btn btn-primary">Применить</button>
+                    </div>
+                </div>
+                <div class="modal-content tab-pane" id="category-filter-sm" role="tabpanel">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title"><a href="#root-filter-sm" data-toggle="tab">Back</a></h5>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="list-filter">
+                            <li class="list-filter-item main-item"><label for="category-filter-all">All</label><input type="radio" id="category-filter-all" name="category-filter" value="all" checked></li>
+                            <li class="list-filter-item"><label for="category-filter-1">AGRICULTURE</label><input type="radio" id="category-filter-1" name="category-filter" value="1"></li>
+                            <li class="list-filter-item"><label for="category-filter-2">APPAREL</label><input type="radio" id="category-filter-2" name="category-filter" value="2"></li>
+                            <li class="list-filter-item"><label for="category-filter-3">AUTO & TRANSPORTATION</label><input type="radio" id="category-filter-3" name="category-filter" value="3"></li>
+                            <li class="list-filter-item"><label for="category-filter-4">CONSTRUCTION</label><input type="radio" id="category-filter-4" name="category-filter" value="4"></li>
+                            <li class="list-filter-item"><label for="category-filter-5">ELECTRICAL EQUIPMENTS & TELECOMMUNICATION</label><input type="radio" id="category-filter-5" name="category-filter" value="5"></li>
+                            <li class="list-filter-item"><label for="category-filter-6">ELECTRONICS</label><input type="radio" id="category-filter-6" name="category-filter" value="6"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script_components.js"></script>
+</body>
+<!--<i class="far fa-comment"></i>-->
+
+</html>

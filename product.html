@@ -1,0 +1,1203 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>1 MVP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./bcSwipe/jquery.bcSwipe.min.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <div class="header-nav-top d-none d-md-block">
+            <div class="container">
+                <div class="text-right">
+                    <a href="#">О компании</a>
+                    |
+                    <span class="login" data-contents="#head-accunt-lg" data-toggle="popover">Имя <i class="fas fa-sort-down"></i></span>
+                    |
+                    <span class="login" data-contents="#head-login-lg" data-toggle="popover">Вход <i class="fas fa-sort-down"></i></span>
+                    |
+                    <a href="#">RU</a>
+                </div>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="head-login-lg">
+                <form action="" style="padding: 1.5em 1.5em 0.5em">
+                    <div class="form-group"><input type="email" class="form-control" placeholder="Email"></div>
+                    <div class="form-group"><input type="password" class="form-control" placeholder="Пароль"></div>
+                    <div class="form-group"><button class="btn btn-block btn-primary" type="submit">Войти</button></div>
+                    <div class="form-group"><a href="#" class="btn btn-block btn-primary">Зарегистрироваться</a></div>
+                    <div class="text-center"><a href="#" class="forgot text-info">Забыли пароль?</a></div>
+                </form>
+            </div>
+            <div id="head-accunt-lg">
+                <ul class="account-links">
+                    <li><a href="#" class="text-dark">Личный кабинет</a></li>
+                    <li><a href="#" class="text-dark">Сообщения</a><span>5</span></li>
+                    <li><a href="#" class="text-dark">Заявки</a><span>15</span></li>
+                    <li><a href="#" class="text-dark">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="top-navbar" class="collapse d-md-none">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col text-left">
+                        <a class="mr-4" href="#"><span class="logo"></span></a>
+                    </div>
+                    <div class="col text-right">
+                        <a href="#" class="close" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">&times;</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 main-menu">
+                        <div class="search-form">
+                            <form action="#">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="custom-select">
+                                            <option value="catgory" selected>Категории</option>
+                                            <option value="product">Товары</option>
+                                            <option value="">....</option>
+                                        </select>
+                                    </div>
+                                    <input class="form-control" type="search" placeholder="" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-link search" type="submit"></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="login">
+                            <a data-toggle="collapse" href="#header-login-sm" role="button" aria-expanded="false" aria-controls="header-login-sm">Вход</a>
+                            <div id="header-login-sm" class="collapse">
+                                <form action="">
+                                    <div class="form-group"><input type="email" class="form-control" placeholder="Email"></div>
+                                    <div class="form-group"><input type="password" class="form-control" placeholder="Пароль"></div>
+                                    <div class="form-group"><button class="btn btn-block btn-outline-light" type="submit">Войти</button></div>
+                                    <div class="form-group"><a href="#" class="btn btn-block btn-outline-light">Зарегистрироваться</a></div>
+                                    <div class="form-group text-center"><a href="#" class="forgot">Забыли пароль?</a></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="account">
+                            <a data-toggle="collapse" href="#header-account-sm" role="button" aria-expanded="false" aria-controls="header-account-sm">Имя</a>
+                            <div id="header-account-sm" class="collapse">
+                                <ul>
+                                    <li><a href="#">Личный кабинет</a></li>
+                                    <li><a href="#">Сообщения</a><span>5</span></li>
+                                    <li><a href="#">Заявки</a><span>15</span></li>
+                                    <li><a href="#">Выйти</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="language">
+                            Выберите язык
+                            <span class="links">
+                                <!-- alternative without link for current language -->
+                                <!-- <span>RU</span> -->
+                                <a href="#" class="current">RU</a>
+                                <a href="#">EN</a>
+                            </span>
+                        </div>
+                        <div class="link">
+                            <a href="#">О компании</a>
+                        </div>
+                        <div class="cart-block">
+                            <a href="#">Корзина</a><span>8 000 руб</span>
+                        </div>
+                        <div>
+                            <div class="order-btn"><button type="button" class="btn btn-outline-light btn-block">Заявки</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-top-menu">
+            <nav class="navbar navbar-light navbar-expand-md">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="d-md-none navbar-sm-custom">
+                        <a class="navbar-brand" href="#"><span class="logo"></span></a>
+                        <div class="navbar-text">
+                            <button class="btn btn-link my-2 my-sm-0 search" type="submit"></button>
+                            <div class='counter'>
+                                <span class="cart"></span><span>3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <a class="navbar-brand mr-4 mr-md-3" href="#"><span class="logo"></span></a>
+                        <form style="flex-grow: 2">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <select class="custom-select">
+                                        <option value="catgory" selected>Категории</option>
+                                        <option value="product">Товары</option>
+                                        <option value="">....</option>
+                                    </select>
+                                </div>
+                                <input class="form-control" type="search" placeholder="" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-link my-2 my-sm-0 search" type="submit"></button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="navbar-text mr-4 ml-4 mr-md-2 ml-md-2" id="cart">
+                            <div class='counter mr-2'>
+                                <span class="cart"></span><span>3</span></div>
+                                <div class="d-none d-lg-inline d-xl-inline">800 RUR</div>
+                        </div>
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" id="orders" type="submit">Заявки</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+
+    </header>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                <li class="breadcrumb-item"><a href="#">Товары</a></li>
+                <li class="breadcrumb-item"><a href="#">Паровые станции</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Паровая станция Bosh TDS8040</li>
+            </ol>
+        </nav>
+        <div class="row product-block">
+            <div class="col-12 col-lg-9 order-lg-2">
+                <div class="box">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div style="position: relative;">
+                                <div id="productMainSlider" class="carousel slide" data-ride="carousel" data-interval="false">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="./images/product-image-1.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./images/product-image-1.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./images/product-image-1.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./images/product-image-1.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./images/product-image-1.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./images/product-image-1.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./images/product-image-1.jpg" alt="">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="./images/product-image-1.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#productMainSlider" data-slide-to="0" class="active">
+                                            <img src="./images/product-image-1-thumb.jpg" alt="" class="img-fluid">
+                                        </li>
+                                        <li data-target="#productMainSlider" data-slide-to="1">
+                                            <img src="./images/product-image-2-thumb.jpg" alt="" class="img-fluid">
+                                        </li>
+                                        <li data-target="#productMainSlider" data-slide-to="2">
+                                            <img src="./images/product-image-3-thumb.jpg" alt="" class="img-fluid">
+                                        </li>
+                                        <li data-target="#productMainSlider" data-slide-to="3">
+                                            <img src="./images/product-image-4-thumb.jpg" alt="" class="img-fluid">
+                                        </li>
+                                        <li data-target="#productMainSlider" data-slide-to="4">
+                                            <img src="./images/product-image-1-thumb.jpg" alt="" class="img-fluid">
+                                        </li>
+                                        <li data-target="#productMainSlider" data-slide-to="5">
+                                            <img src="./images/product-image-2-thumb.jpg" alt="" class="img-fluid">
+                                        </li>
+                                        <li data-target="#productMainSlider" data-slide-to="6">
+                                            <img src="./images/product-image-3-thumb.jpg" alt="" class="img-fluid">
+                                        </li>
+                                        <li data-target="#productMainSlider" data-slide-to="7">
+                                            <img src="./images/product-image-4-thumb.jpg" alt="" class="img-fluid">
+                                        </li>
+                                    </ol>
+                                </div>
+                                <a class="carousel-control-prev d-lg-none" href="#productMainSlider" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next d-lg-none" href="#productMainSlider" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <div id="productThumbSlider" class="carousel slide" data-ride="carousel" data-interval="false">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div>
+                                            <img class="img-fluid" src="./images/product-image-1-thumb.jpg" alt="" data-target="#productMainSlider" data-slide-to="0">
+                                            <img class="img-fluid" src="./images/product-image-2-thumb.jpg" alt="" data-target="#productMainSlider" data-slide-to="1">
+                                            <img class="img-fluid" src="./images/product-image-3-thumb.jpg" alt="" data-target="#productMainSlider" data-slide-to="2">
+                                            <img class="img-fluid" src="./images/product-image-4-thumb.jpg" alt="" data-target="#productMainSlider" data-slide-to="3">
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div>
+                                            <img class="img-fluid" src="./images/product-image-1-thumb.jpg" alt="" data-target="#productMainSlider" data-slide-to="4">
+                                            <img class="img-fluid" src="./images/product-image-2-thumb.jpg" alt="" data-target="#productMainSlider" data-slide-to="5">
+                                            <img class="img-fluid" src="./images/product-image-3-thumb.jpg" alt="" data-target="#productMainSlider" data-slide-to="6">
+                                            <img class="img-fluid" src="./images/product-image-4-thumb.jpg" alt="" data-target="#productMainSlider" data-slide-to="7">
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#productThumbSlider" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#productThumbSlider" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div>
+                                <h1>Паровая станция BOSCH TDS8040</h1>
+                                <span class="rating rating-5"></span>
+                                <p class="text-primary">В наличии</p>
+                                <div class="price">3 667 700 Тг.</div>
+                            </div>
+                            <div class="row align-items-end">
+                                <div class="col-12 col-md-4 col-lg-auto">
+                                    <form action="#">
+                                        <div class="form-group">
+                                            <div class="input-group counter-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="btn btn-outline-info" type="button" disabled=""><i class="fas fa-minus"></i></button>
+                                                </div>
+                                                <input type="number" class="form-control" value="1" step="1" min="1" name="count" required="">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-info" type="button"><i class="fas fa-plus"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-lg btn-block btn-primary" type="button">Купить</button>
+                                    </form>
+                                </div>
+                                <div class="col-12 col-md mt-3 mb-md-2"><a href="#" class="text-info alt">Товар на сайте компании</a></div>
+                            </div>
+                            <div class="row align-items-end">
+                                <div class="col-12 col-md-4 col-lg-auto">
+                                    <form action="#">
+                                        <div class="form-group"><input type="phone" class="form-control" placeholder="+7" name="phone" required=""></div>
+                                        <div class="form-group"><input type="email" class="form-control" placeholder="email" name="email" required=""></div>
+                                        <button type="submit" class="btn btn-block btn-outline-secondary">Купить в 1 клик</button>
+                                    </form>
+                                </div>
+                                <div class="col-12 col-md">
+                                    <ul class="list-unstyled mb-0 mt-3">
+                                        <li><i class="fas fa-fw fa-flip-horizontal fa-phone mr-3"></i><a href="#" class="text-dark alt">Показать телефон</a></li>
+                                        <li><i class="far fa-fw fa-flip-horizontal fa-comment-dots mr-3"></i><a href="#" class="text-dark alt">Чат с продавцом</a></li>
+                                        <li><i class="far fa-fw fa-heart mr-3"></i><a href="#" class="text-dark alt">Добавить в избранное</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-4 col-lg">
+                            <div class="block-subtitle">Способы оплаты</div>
+                            <div>Наличными, Безналичный расчет</div>
+                            <div><a href="#pay-popup" class="text-info alt" data-toggle="modal">Подробнее</a></div>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <div class="block-subtitle">Способы доставки</div>
+                            <div>Доставка курьером, Доставка почтой</div>
+                            <div><a href="#region-popup" class="text-info alt" data-toggle="modal">Подробнее</a></div>
+                        </div>
+                        <div class="col-12 col-md">
+                            <div><a href="#region-popup" class="text-info alt" data-toggle="modal">Регионы возврата</a></div>
+                            <div><a href="#condition-popup" class="text-info alt" data-toggle="modal">Условия доставки</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3 order-lg-1">
+                <div class="box">
+                    <div class="row two-columns">
+                        <div class="col-12 col-md-7 col-lg-12">
+                            <div class="d-flex d-md-none pb-2">
+                                <img src="./images/company-logo-1-sm.jpg" alt="company name" title="company name" class="img-fluid">
+                                <div class="ml-3">
+                                    <div class="rating rating-3"></div>
+                                    <div>SunDali</div>
+                                </div>
+                            </div>
+                            <div class="d-md-none border-top rating-percent">
+                                <img src="./images/label-1-year.png" alt="1 year">
+                                <img src="./images/label-rocket.png" alt="rocket">
+                                <div class="count">100%</div>
+                                <div class="text">положительных <br>отзывов из 120</div>
+                            </div>
+                            <div class="text-center d-none d-md-block border border-bottom-0"><img src="./images/company-logo-1.jpg" alt="company name" title="company name" class="img-fluid"></div>
+                            <div class="p-3 bg-primary text-white d-flex justify-content-between">Рейтинг<span>99%</span></div>
+                            <ul class="list-unstyled mt-3 mb-0">
+                                <li><i class="fas fa-map-marker-alt fa-fw"></i> <a href="#" class="text-dark alt">Караганда</a></li>
+                                <li><i class="fas fa-clock fa-fw"></i> <a href="#" class="text-dark alt">График работы</a></li>
+                            </ul>
+                            <div class="d-none d-lg-block mt-3">
+                                <a href="#" class="alt text-info">Все предложения продавца</a>
+                            </div>
+                        </div>
+                        <div class="col text-center text-md-left">
+                            <div class="d-none d-md-block">
+                                <div class="mt-3">Рейтинг
+                                    <div class="rating rating-3" style="margin-top: -.5rem"></div>
+                                </div>
+                                <div class="d-none d-md-flex rating-percent">
+                                    <div class="count">100%</div>
+                                    <div class="text">положительных<br> отзывов из 120</div>
+                                </div>
+                            </div>
+                            <div class="d-none d-md-block">
+                                <div class="awards">Достижения продавца:</div>
+                                <ul class="list-unstyled">
+                                    <li><img src="./images/label-1-year.png" alt="1 year"> 1 год на портале</li>
+                                    <li><img src="./images/label-rocket.png" alt="rocket"> Быстрое обслуживание</li>
+                                </ul>
+                            </div>
+                            <div class="d-lg-none mt-3 mt-md-0">
+                                <a href="#" class="alt text-info">Все предложения продавца</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-lg-block col-lg-3 order-lg-3">
+                <div class="position-sticky" id="sticky-product-info">
+                    <div class="box">
+                        <div class="row">
+                            <div class="col">
+                                <img src="./images/product-image-1.jpg" alt="" class="img-fluid">
+                                <div class="supplier">Sundali</div>
+                            </div>
+                            <div class="col">
+                                <h2>Паровая станция BOSCH TDS8040</h2>
+                                <p class="text-primary">В наличии</p>
+                                <p class="price">3 667 700 Тг.</p>
+                                <button class="btn btn-lg btn-block btn-primary" type="button">Купить</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <ul>
+                                    <li><i class="fas fa-map-marker-alt fa-fw"></i> <a href="#" class="text-dark alt">Караганда</a></li>
+                                    <li><i class="fas fa-clock fa-fw"></i> <a href="#" class="text-dark alt">График работы</a></li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul>
+                                    <li><i class="fas fa-fw fa-flip-horizontal fa-phone"></i> <a href="#" class="text-dark alt">Показать телефон</a></li>
+                                    <li><i class="far fa-fw fa-flip-horizontal fa-comment-dots"></i> <a href="#" class="text-dark alt">Чат с продавцом</a></li>
+                                    <li><i class="far fa-fw fa-heart"></i> <a href="#" class="text-dark alt">В избранное</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="#" class="text-dark alt">88 отзывов</a>
+                            <span class="rating rating-5"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-9 off-set-lg-3 order-lg-4">
+                <div class=" description">
+                <ul class="nav nav-tabs product-tabs d-none d-md-flex" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#details" id="tab-details" data-toggle="list" role="tab" aria-controls="details">Характеристики товара</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab2" id="tab-tab2" data-toggle="list" role="tab" aria-controls="tab2">Вкладка №2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab3" id="tab-tab3" data-toggle="list" role="tab" aria-controls="tab3">Вкладка №3</a>
+                    </li>
+                </ul>
+                <div class="box">
+                    <div class="tab-content">
+                        <div class="d-md-none tab-heading">
+                            <a data-toggle="collapse" data-parent=".tab-content" href="#details-sm">Характеристики товара</a>
+                        </div>
+                        <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="tab-details">
+                            <div id="details-sm" class="collapse show" aria-labelledby="headingOne" data-parent=".tab-content">
+                                <div>
+                                    <h2>Характеристики</h2>
+                                    <dl class="row">
+                                        <dt class="col-md-7 col-lg-5">Производитель</dt>
+                                        <dd class="col-md-5 col-lg-7">ZENITH</dd>
+                                        <dt class="col-md-7 col-lg-5">Страна производитель</dt>
+                                        <dd class="col-md-5 col-lg-7">Швейцария</dd>
+                                        <dt class="col-md-7 col-lg-5">Пол</dt>
+                                        <dd class="col-md-5 col-lg-7">Мужской</dd>
+                                        <dt class="col-md-7 col-lg-5">Тип</dt>
+                                        <dd class="col-md-5 col-lg-7">Элитные часы</dd>
+                                    </dl>
+                                    <h2>Описание</h2>
+                                    <p>Прекрасные часы Zenith Zenith Pilot Pilot Big Date Special ref. 03.2410.4010/21.c722 круглый корпус из сатинированной нержавеющей стали, диаметром 42 мм, водонепроницаемый до 50 метров. На торце заводной головки имеется пятиконечная звезда - эмблема бренда. Сапфировое стекло установлено на передней стороне корпуса и на его задней крышке. Циферблат матово-черный, с арабскими цифрами и стрелками, покрытыми люминесцентным составом Superluminova. На фланце расположена телеметрическая шкала. Модель оснащена мануфактурным автоматическим механизмом El Primero 4010, диаметром 30 мм, толщиной 7,65 мм, состоящим из 306 компонентов, на 31 камне, с балансовой частотой 36000 полуколебаний в час (5 гц), 50-часовым запасом хода, функциями индикации часов, минут (посредством соответствующих центральных стрелок), секунд (на малом боковом циферблате на 9 часах), даты (в сдвоенной большой апертуре на 6 часах), а также с хронографом (центральная секундная стрелка и 30-минутный счетчик на 3 часах). Калибр отлично отделан, ротор автоподзавода декорирован "женевскими волнами".</p>
+                                    <h2>Еще Описание в виде таблицы</h2>
+                                    <table>
+                                        <tr>
+                                            <td><img src="./images/product-description-1.jpg" alt=""></td>
+                                            <td>
+                                                Прекрасные часы Zenith Zenith Pilot Pilot Big Date Special ref. 03.2410.4010/21.c722 круглый корпус из сатинированной нержавеющей стали, диаметром 42 мм, водонепроницаемый до 50 метров. На торце заводной головки имеется пятиконечная звезда - эмблема бренда. Сапфировое стекло установлено на передней стороне корпуса и на его задней крышке. Циферблат матово-черный, с арабскими цифрами и стрелками, покрытыми люминесцентным составом Superluminova. На фланце расположена телеметрическая шкала. Модель оснащена мануфактурным автоматическим механизмом El Primero 4010, диаметром 30 мм, толщиной 7,65 мм, состоящим из 306 комп-
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="./images/product-description-2.jpg" alt=""></td>
+                                            <td>
+                                                Прекрасные часы Zenith Zenith Pilot Pilot Big Date Special ref. 03.2410.4010/21.c722 круглый корпус из сатинированной нержавеющей стали, диаметром 42 мм, водонепроницаемый до 50 метров. На торце заводной головки имеется пятиконечная звезда - эмблема бренда. Сапфировое стекло установлено на передней стороне корпуса и на его задней крышке. Циферблат матово-черный, с арабскими цифрами и стрелками, покрытыми люминесцентным составом Superluminova. На фланце расположена телеметрическая шкала. Модель оснащена мануфактурным автоматическим механизмом El Primero 4010, диаметром 30 мм, толщиной 7,65 мм, состоящим из 306 комп-
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="./images/product-description-3.jpg" alt=""></td>
+                                            <td>
+                                                Прекрасные часы Zenith Zenith Pilot Pilot Big Date Special ref. 03.2410.4010/21.c722 круглый корпус из сатинированной нержавеющей стали, диаметром 42 мм, водонепроницаемый до 50 метров. На торце заводной головки имеется пятиконечная звезда - эмблема бренда. Сапфировое стекло установлено на передней стороне корпуса и на его задней крышке. Циферблат матово-черный, с арабскими цифрами и стрелками, покрытыми люминесцентным составом Superluminova. На фланце расположена телеметрическая шкала. Модель оснащена мануфактурным автоматическим механизмом El Primero 4010, диаметром 30 мм, толщиной 7,65 мм, состоящим из 306 комп-
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <h2>Преимущества</h2>
+                                    <ul>
+                                        <li>Циферблат матово-черный</li>
+                                        <li>С арабскими цифрами и стрелками</li>
+                                        <li>Покрытыми люминесцентным составом Superluminova</li>
+                                        <li>Телеметрическая шкала</li>
+                                        <li>Модель оснащена мануфактурным автоматическим механизмом El Primero 4010</li>
+                                        <li>Диаметром 30 мм</li>
+                                        <li>Толщиной 7,65 мм</li>
+                                        <li>Состоящим из 306 компонентов, на 31 камне</li>
+                                        <li>С балансовой частотой 36000 полуколебаний в час (5 гц), 50-часовым запасом хода</li>
+                                        <li>Функциями индикации часов, минут </li>
+                                        <li>С хронографом</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-md-none tab-heading">
+                            <a data-toggle="collapse" data-parent=".tab-content" href="#tab-tab2-sm">Вкладка №2</a>
+                        </div>
+                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab-tab2">
+                            <div id="tab-tab2-sm" class="collapse" aria-labelledby="headingOne" data-parent=".tab-content">
+                                <div>details-tab 2</div>
+                            </div>
+                        </div>
+                        <div class="d-md-none tab-heading">
+                            <a data-toggle="collapse" data-parent=".tab-content" href="#tab-tab3-sm">Вкладка №3</a>
+                        </div>
+                        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab-tab3">
+                            <div id="tab-tab3-sm" class="collapse" aria-labelledby="headingOne" data-parent=".tab-content">
+                                <div>details-tab 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box reviews">
+                    <h2>Отзывы о товаре</h2>
+                    <div class="p">Об этом товаре пока нет отзывов. Вы можете оставить первый</div>
+                    <div class="p"><button class="btn btn-primary" type="button">Оставить отзыв</button></div>
+                    <h2>Отзывы о Компании <q>Название компании</q></h2>
+                    <div class="card summary p">
+                        <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="rating-percent">
+                                    <div class="count">100%</div>
+                                    <div class="text">положительных<br> отзывов из 120</div>
+                                </div>
+                                <div class="rating rating-5"></div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <dl class="row dl-sm">
+                                    <dt class="col">Актуальность цены</dt>
+                                    <dd class="col-auto">100%</dd>
+                                    <div class="col-12"></div>
+                                    <dt class="col">Актуальность наличия</dt>
+                                    <dd class="col-auto">100%</dd>
+                                    <div class="col-12"></div>
+                                    <dt class="col">Актуальность описания</dt>
+                                    <dd class="col-auto">100%</dd>
+                                    <div class="col-12"></div>
+                                    <dt class="col">Выполнение заказа в срок</dt>
+                                    <dd class="col-auto">100%</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="p"><button class="btn btn-primary" type="button">Оставить отзыв</button></div>
+                    <div class="card p">
+                        <div class="card-header">
+                            <div>
+                                <span class="name">Виктор</span><span class="evaluation">отлично</span>
+                            </div>
+                            <div><span class="date">25.09.2017</span><span class="rating rating-2"></span></div>
+                        </div>
+                        <div class="d-md-flex">
+                            <div class="card-body checks">
+                                <ul class="check-list">
+                                    <li>Актуальность цены</li>
+                                    <li>Актуальность наличия</li>
+                                    <li>Актуальность описания</li>
+                                    <li>Выполнение заказа в срок</li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                Прекрасные часы Zenith Zenith Pilot Pilot Big Date Special ref. 03.2410.4010/21.c722 круглый корпус из сатинированной нержавеющей стали, диаметром 42 мм, водонепроницаемый до 50 метров. На торце заводной головки имеется пятиконечная звезда - эмблема бренда. Сапфировое стекло установлено на передней стороне корпуса и на его задней крышке. Циферблат матово-черный, с арабскими цифрами и стрелками,
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p">
+                        <div class="card-header">
+                            <div>
+                                <span class="name">Виктор</span><span class="evaluation">отлично</span>
+                            </div>
+                            <div><span class="date">25.09.2017</span><span class="rating rating-4"></span></div>
+                        </div>
+                        <div class="d-md-flex">
+                            <div class="card-body checks">
+                                <ul class="check-list">
+                                    <li>Актуальность цены</li>
+                                    <li>Актуальность наличия</li>
+                                    <li>Актуальность описания</li>
+                                    <li>Выполнение заказа в срок</li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                Прекрасные часы Zenith Zenith Pilot Pilot Big Date Special ref. 03.2410.4010/21.c722 круглый корпус из сатинированной нержавеющей стали, диаметром 42 мм, водонепроницаемый до 50 метров. На торце заводной головки имеется пятиконечная звезда - эмблема бренда. Сапфировое стекло установлено на передней стороне корпуса и на его задней крышке. Циферблат матово-черный, с арабскими цифрами и стрелками,
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p">
+                        <div class="card-header">
+                            <div>
+                                <span class="name">Виктор</span><span class="evaluation">отлично</span>
+                            </div>
+                            <div><span class="date">25.09.2017</span><span class="rating rating-5"></span></div>
+                        </div>
+                        <div class="d-md-flex">
+                            <div class="card-body checks">
+                                <ul class="check-list">
+                                    <li>Актуальность цены</li>
+                                    <li>Актуальность наличия</li>
+                                    <li>Актуальность описания</li>
+                                    <li>Выполнение заказа в срок</li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                Прекрасные часы Zenith Zenith Pilot Pilot Big Date Special ref. 03.2410.4010/21.c722 круглый корпус из сатинированной нержавеющей стали, диаметром 42 мм, водонепроницаемый до 50 метров. На торце заводной головки имеется пятиконечная звезда - эмблема бренда. Сапфировое стекло установлено на передней стороне корпуса и на его задней крышке. Циферблат матово-черный, с арабскими цифрами и стрелками,
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p"><a href="#" class="text-info alt">Все отзывы</a></div>
+                </div>
+                <div class="modal fade" id="region-popup" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h2>Регион доставки</h2>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <ul class="list-unstyled">
+                                            <li>Азербайджан</li>
+                                            <li>Армения</li>
+                                            <li>Беларусь</li>
+                                            <li>Грузия</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-4">
+                                        <ul class="list-unstyled">
+                                            <li>Казахстан</li>
+                                            <li>Молдова</li>
+                                            <li>Россия</li>
+                                            <li>Таджикистан</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-4">
+                                        <ul class="list-unstyled">
+                                            <li>Туркменистан</li>
+                                            <li>Узбекистан</li>
+                                            <li>Украина</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="condition-popup" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h2>Условия возврата</h2>
+                                <p><b>Компания осуществляет возврат согласно Закону <a href="#" class="text-info">«О защите прав потребителей»</a></b></p>
+                                <p>
+                                    Согласно ст.14 действующего Закона Республики Казахстан  <a href="#" class="text-info">О защите прав потребителей</a> потребитель вправе в течение четырнадцати дней с момента передачи ему непродовольственного товара, если более длительный срок не объявлен продавцом (изготовителем), обменять купленный товар на аналогичный товар другого размера, формы, габарита, фасона, расцветки, комплектации, произведя, в случае разницы в цене, необходимый перерасчет с продавцом (изготовителем).<br>
+При отсутствии необходимого для обмена товара у продавца (изготовителя) покупатель вправе возвратить приобретенный товар продавцу (изготовителю) и получить уплаченную за него денежную сумму.<br>
+Исключения<br>
+Согласно ст. 30 Закона, продавец имеет право отказать потребителю в обмене и возврате:<br>
+лекарственных средств, изделий медицинского назначения;<br>
+нательного белья;<br>
+чулочно-носочных изделий;<br>
+животных и растений;<br>
+метражных товаров, а именно тканей из волокон всех видов, трикотажного и гардинного полотна, меха искусственного, ковровых изделий, нетканых материалов, лент, кружева, тесьмы, проводов, шнуров, кабелей, линолеума, багета, пленки, клеенки.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="pay-popup" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h2>Способы оплаты</h2>
+                                <p><b>Доставка осуществляется только по предоплате.</b></p>
+                                <ul>
+                                    <li>Наличными</li>
+                                    <li>Безналичный расчет</li>
+                                </ul>
+                                <p><b>Дополнительная информация об оплате:</b></p>
+                                <p>Услуги оказываются на основании Договора-оферты. Документ доступен по адресу:<br>
+                                <a href="http://www.swisswatch.kz/?page_id=1028" class="text-info">http://www.swisswatch.kz/?page_id=1028</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+        <section>
+            <div class="title">Подобные товары других компаний</div>
+            <div class="row">
+                <div class="col-12 products">
+                    <div id="products-like" class="carousel slide multi-carousel product-carousel" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner row" role="listbox">
+                            <div class="carousel-item col-8 col-md-4 col-lg-2 active">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500 руб</div>
+                                        <div class="card-price">1500 руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_2.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_3.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div></div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_4.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_5.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_6.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_7.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_8.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"></div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_9.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#products-like" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next text-faded" href="#products-like" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="title">Вы просматривали</div>
+            <div class="row">
+                <div class="col-12 products">
+                    <div id="products-see" class="carousel slide multi-carousel product-carousel" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner row" role="listbox">
+                            <div class="carousel-item col-8 col-md-4 col-lg-2 active">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500 руб</div>
+                                        <div class="card-price">1500 руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_2.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_3.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div></div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_4.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_5.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_6.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_7.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_8.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"></div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_9.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#products-see" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next text-faded" href="#products-see" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="title">Мы рекомендуем</div>
+            <div class="row">
+                <div class="col-12 products">
+                    <div id="products-recommend" class="carousel slide multi-carousel product-carousel" data-ride="carousel" data-interval="false">
+                        <div class="carousel-inner row" role="listbox">
+                            <div class="carousel-item col-8 col-md-4 col-lg-2 active">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_1.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500 руб</div>
+                                        <div class="card-price">1500 руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_2.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_3.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div></div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_4.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_5.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_6.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_7.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_8.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"></div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-8 col-md-4 col-lg-2">
+                                <div class="card">
+                                    <a href="#">
+                                        <img class="card-img-top" src="./images/product_9.png" alt="Card image cap"></a>
+                                    <div class="card-body">
+                                        <div class="label-sale"><span>Скидка</span></div>
+                                        <div class="card-title">Console Microsoft XBox 360 slim 4 GB with 2 camera</div>
+                                        <div class="card-price-previous"><span class="label-sale-percent float-right">20%</span>2500руб</div>
+                                        <div class="card-price">1500руб</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#products-recommend" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next text-faded" href="#products-recommend" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-socials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 fas fa-phone-volume"></i>0900 800 45 45</div>
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 far fa-envelope"></i>example@mail.ru</div>
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 fas fa-map-marker-alt"></i>ул. Аванова 32б оф.234</div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-12 text-center text-lg-right icons">
+                        <i class="mr-3 fab fa-facebook-f"></i>
+                        <i class="mr-3 fab fa-vk"></i>
+                        <i class="mr-3 fab fa-youtube"></i>
+                        <i class="mr-3 fab fa-skype"></i>
+                        <i class="mr-3 fab fa-whatsapp"></i>
+                        <i class="mr-3 fab fa-telegram-plane"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-nav-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Электроника</h3>
+                        <ul>
+                            <li><a href="">Мобильные телефоны</a></li>
+                            <li><a href="">Планшеты</a></li>
+                            <li><a href="">Ноутбуки</a></li>
+                            <li><a href="">Бытовая техника</a></li>
+                            <li><a href="">Камеры, фото и видео </a></li>
+                            <li><a href="">Телевизоры</a></li>
+                            <li><a href="">Наушники</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Мода</h3>
+                        <ul>
+                            <li><a href="">Женская мода</a></li>
+                            <li><a href="">Мужская мода</a></li>
+                            <li><a href="">Мода для девочек</a></li>
+                            <li><a href="">Мода для малчиков</a></li>
+                            <li><a href="">Часы</a></li>
+                            <li><a href="">Ювелирные изделия</a></li>
+                            <li><a href="">Женские сумочки</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Дом и кухня</h3>
+                        <ul>
+                            <li><a href="">Ванна</a></li>
+                            <li><a href="">Домашний декор</a></li>
+                            <li><a href="">Кухня и столовая</a></li>
+                            <li><a href="">Инструменты</a></li>
+                            <li><a href="">Аудио и видео</a></li>
+                            <li><a href="">Мебель</a></li>
+                            <li><a href="">Патио. Газон и сад</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Красота</h3>
+                        <ul>
+                            <li><a href="">Духи</a></li>
+                            <li><a href="">Макияж</a></li>
+                            <li><a href="">Уход за кожей</a></li>
+                            <li><a href="">Инструменты и акссесуары</a></li>
+                            <li><a href="">Для мужчин</a></li>
+                            <li><a href="">Витамины</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Для детей</h3>
+                        <ul>
+                            <li><a href="">Коляски</a></li>
+                            <li><a href="">Автокресла</a></li>
+                            <li><a href="">Питание</a></li>
+                            <li><a href="">Купинае и уход за кожей</a></li>
+                            <li><a href="">Детская одежда и обувь</a></li>
+                            <li><a href="">Детские игрушки</a></li>
+                            <li><a href="">Детское питание</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Бренды</h3>
+                        <ul>
+                            <li><a href="">Mothercare</a></li>
+                            <li><a href="">Apple</a></li>
+                            <li><a href="">Nike</a></li>
+                            <li><a href="">Samsung</a></li>
+                            <li><a href="">Tefal</a></li>
+                            <li><a href="">L'oreal Paris</a> </li>
+                            <li><a href="">Skechers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-8 col-12 order-lg-first order-last text-center text-lg-left">2017 QRP.com. All rights reserved</div>
+                    <div class="col-lg-4 col-12 order-lg-last order-first text-center text-lg-right">
+                        <ul>
+                            <li><a href="">Карьера</a></li>
+                            <li><a href="">Гарантии</a></li>
+                            <li><a href="">Условия использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./script_components.js"></script>
+</body>
+<!--<i class="far fa-comment"></i>-->
+
+</html>

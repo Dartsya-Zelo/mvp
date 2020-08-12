@@ -1,0 +1,545 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>1 MVP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./bcSwipe/jquery.bcSwipe.min.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <div class="header-nav-top d-none d-md-block">
+            <div class="container">
+                <div class="text-right">
+                    <a href="#">О компании</a>
+                    |
+                    <span class="login" data-contents="#head-login-lg" data-toggle="popover">Имя <i class="fas fa-sort-down"></i></span>
+                    |
+                    <a href="#">RU</a>
+                </div>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="head-login-lg">
+                <ul class="account-links">
+                    <li><a href="#" class="text-dark">Личный кабинет</a></li>
+                    <li><a href="#" class="text-dark">Сообщения</a><span>5</span></li>
+                    <li><a href="#" class="text-dark">Заявки</a><span>15</span></li>
+                    <li><a href="#" class="text-dark">Выйти</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="top-navbar" class="collapse d-md-none">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col text-left">
+                        <a class="mr-4" href="#"><span class="logo"></span></a>
+                    </div>
+                    <div class="col text-right">
+                        <a href="#" class="close" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">&times;</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 main-menu">
+                        <div class="search-form">
+                            <form action="#">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="custom-select">
+                                            <option value="catgory" selected>Категории</option>
+                                            <option value="product">Товары</option>
+                                            <option value="">....</option>
+                                        </select>
+                                    </div>
+                                    <input class="form-control" type="search" placeholder="" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-link search" type="submit"></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="login">
+                            <a data-toggle="collapse" href="#header-account-sm" role="button" aria-expanded="false" aria-controls="header-account-sm">Имя</a>
+                            <div id="header-account-sm" class="collapse">
+                                <ul>
+                                    <li><a href="#">Личный кабинет</a></li>
+                                    <li><a href="#">Сообщения</a><span>5</span></li>
+                                    <li><a href="#">Заявки</a><span>15</span></li>
+                                    <li><a href="#">Выйти</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="language">
+                            Выберите язык
+                            <span class="links">
+                                <!-- alternative without link for current language -->
+                                <!-- <span>RU</span> -->
+                                <a href="#" class="current">RU</a>
+                                <a href="#">EN</a>
+                            </span>
+                        </div>
+                        <div class="link">
+                            <a href="#">О компании</a>
+                        </div>
+                        <div class="cart-block">
+                            <a href="#">Корзина</a><span>8 000 руб</span>
+                        </div>
+                        <div>
+                            <div class="order-btn"><button type="button" class="btn btn-outline-light btn-block">Заявки</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-top-menu">
+            <nav class="navbar navbar-light navbar-expand-md">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="d-md-none navbar-sm-custom">
+                        <a class="navbar-brand" href="#"><span class="logo"></span></a>
+                        <div class="navbar-text">
+                            <button class="btn btn-link my-2 my-sm-0 search" type="submit"></button>
+                            <div class='counter'>
+                                <span class="cart"></span><span>3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <a class="navbar-brand mr-4 mr-md-3" href="#"><span class="logo"></span></a>
+                        <form style="flex-grow: 2">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <select class="custom-select">
+                                        <option value="catgory" selected>Категории</option>
+                                        <option value="product">Товары</option>
+                                        <option value="">....</option>
+                                    </select>
+                                </div>
+                                <input class="form-control" type="search" placeholder="" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-link my-2 my-sm-0 search" type="submit"></button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="navbar-text mr-4 ml-4 mr-md-2 ml-md-2" id="cart">
+                            <div class='counter mr-2'>
+                                <span class="cart"></span><span>3</span></div>
+                                <div class="d-none d-lg-inline d-xl-inline">800 RUR</div>
+                        </div>
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" id="orders" type="submit">Заявки</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="steps">
+        <div class="container text-center">
+            <div class="caption">Разместите одну заявку <small>получите множество предложений</small></div>
+            <div class="row justify-content-md-center">
+                <div class="details col box box-lg">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <div class="image"><img src="./images/step-1.png" alt="step-1"></div>
+                            <div class="text">Оформление заказа заказчиком</div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="image"><img src="./images/step-2.png" alt="step-2"></div>
+                            <div class="text">Оповещение всех  поставщиков</div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="image"><img src="./images/step-3.png" alt="step-3"></div>
+                            <div class="text">Поставщики делают предложение  заказчику</div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="image"><img src="./images/step-4.png" alt="step-4"></div>
+                            <div class="text">Заказчик выбирает  лучшее предложение  и совершает сделку</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="col-lg-8 col-md-12">
+                    <div id="zayavki-animation" class="gif-animation">
+                        <div class="caption">Gif-анимация</div>
+                        <div class="animaton"><img src="./images/animation.gif" alt="animation" width="502" height="320" class="img-fluid"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="leave-request">
+                                <div class="form-title">оставьте заявку</div>
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-12 col-md-6">
+                                            <input type="text" class="form-control" placeholder="Что вы ищите">
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-3">
+                                            <input type="text" class="form-control" placeholder="количество">
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-3">
+                                            <select class="custom-select">
+                                                <option selected>ящики</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-4 col-md-6">
+                                            <select class="custom-select">
+                                                <option selected>Запрос цены</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <button type="button" class="btn btn-primary btn-block" type="submit">Отправить заявку</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="about-rewievs">
+                                <div class="item">
+                                    <div class="review-title"><img src="./images/flag_ua.png" alt="">Diana</div>
+                                    Компания закупает: Цинк в чушках марки: ЦВО, ЦАО,ЦО, 1000-2000 тонн в месяц, условия поставки FCA склада продовца
+                                </div>
+                                <div class="item">
+                                    <div class="review-title"><img src="./images/flag_ru.png" alt="">Artem</div>
+                                    1000 тонн рафинированного подсолнечного масло ежемесячно. Договор минимум на один год.
+                                </div>
+                                <div class="item">
+                                    <div class="review-title"><img src="./images/flag_ua.png" alt="">Diana</div>
+                                    Компания закупает: Цинк в чушках марки: ЦВО, ЦАО,ЦО, 1000-2000 тонн в месяц, условия поставки FCA склада продовца
+                                </div>
+                                <div class="item">
+                                    <div class="review-title"><img src="./images/flag_ru.png" alt="">Artem</div>
+                                    1000 тонн рафинированного подсолнечного масло ежемесячно. Договор минимум на один год.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="title"><div>Примеры заказов</div></div>
+            <div class="row examples">
+                <div class="col-12 col-lg-6">
+                    <div class="media">
+                        <img src="./images/product_14.png" alt="">
+                        <div class="media-body">
+                            <div>Куплю 1000 женских пальто, кашемир. Размеры 42-56. Нужно до 15 января поставить в Москву.</div>
+                            <div class="props"><span>Страна:</span> Россия</div>
+                            <div class="props"><span>Необходимое количество:</span> 1000 шт.</div>
+                            <a href="#" class="btn btn-primary">Предложить отзыв</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="media">
+                        <img src="./images/product_14.png" alt="">
+                        <div class="media-body">
+                            <div>Куплю 1000 женских пальто, кашемир. Размеры 42-56. Нужно до 15 января поставить в Москву.</div>
+                            <div class="props"><span>Страна:</span> Россия</div>
+                            <div class="props"><span>Необходимое количество:</span> 1000 шт.</div>
+                            <a href="#" class="btn btn-primary">Предложить отзыв</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row examples">
+                <div class="col-12 col-lg-6">
+                    <div class="media">
+                        <img src="./images/product_14.png" alt="">
+                        <div class="media-body">
+                            <div>Куплю 1000 женских пальто, кашемир. Размеры 42-56. Нужно до 15 января поставить в Москву.</div>
+                            <div class="props"><span>Страна:</span> Россия</div>
+                            <div class="props"><span>Необходимое количество:</span> 1000 шт.</div>
+                            <a href="#" class="btn btn-primary">Предложить отзыв</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="media">
+                        <img src="./images/product_14.png" alt="">
+                        <div class="media-body">
+                            <div>Куплю 1000 женских пальто, кашемир. Размеры 42-56. Нужно до 15 января поставить в Москву.</div>
+                            <div class="props"><span>Страна:</span> Россия</div>
+                            <div class="props"><span>Необходимое количество:</span> 1000 шт.</div>
+                            <a href="#" class="btn btn-primary">Предложить отзыв</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="title"><div>Преимущества и выгоды</div></div>
+            <div class="row advantages">
+                <div class="col-12 col-md-6 col-lg-4 media">
+                    <img src="./images/advantage_1.png" alt="" class="mr-4 float-left">
+                    <div class="media-body">
+                        Быстрый способ найти поставщика. Не нужно обзванивать и изучать всех по отдельности
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 media">
+                    <img src="./images/advantage_2.png" alt="" class="mr-4 float-left">
+                    <div class="media-body">Мы делаем рассылку о вашем заказе всей базе поставщиков по выбранной категори и региону</div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 media">
+                    <img src="./images/advantage_3.png" alt="" class="mr-4 float-left">
+                    <div class="media-body">За счет конкуренции поставщиков вы получаете выгодные цены и условия</div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 media">
+                    <img src="./images/advantage_4.png" alt="" class="mr-4 float-left">
+                    <div class="media-body">Бесплатное создание тендера. Никаких скрытых комиссий</div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 media">
+                    <img src="./images/advantage_5.png" alt="" class="mr-4 float-left">
+                    <div class="media-body">Не требуются заполнения бюрократических документов, ЭЦП, как в обычных тендерах</div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 media">
+                    <img src="./images/advantage_6.png" alt="" class="mr-4 float-left">
+                    <div class="media-body">Большая база поставщиков, поэтому вы легко найдете своего</div>
+                </div>
+            </div>
+        </section>
+        <section class="start">
+            <p class="upper">Сколько стоит для заказчиков?</p>
+            <p class="mb-4">Размещение заказов на площадке</p>
+            <p class="upper text-primary font-weight-bold">100% бесплатно</p>
+        </section>
+        <section>
+            <div class="title"><div>Предложения для роста продаж</div></div>
+            <div class="row suggestions">
+                <div class="col-3 col-xl-3 d-none d-lg-flex">
+                    <div class="grid-box">
+                        <div class="tariff-name"></div>
+                        <div class="tariff-item">Полнофункциональный интернет-магазин</div>
+                        <div class="tariff-item">Размещение 10 000 товарных позиций</div>
+                        <div class="tariff-item">Возможность расширения количества позиций</div>
+                        <div class="tariff-item">Мобильная версия сайта</div>
+                        <div class="tariff-item">Поддержка персонального менеджера</div>
+                        <div class="tariff-item">Бюджет на ProSale</div>
+                        <div class="tariff-item">Выделенная зона в каталоге Premium</div>
+                        <div class="tariff-price">Полная цена</div>
+                        <div class="tariff-price">Специальная цена</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg tariff">
+                    <div class="box grid-box">
+                        <div class="tariff-name">Пакет<div class="name">Базовый</div></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Полнофункциональный интернет-магазин</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Размещение 10 000 товарных позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Возможность расширения количества позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Мобильная версия сайта</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Поддержка персонального менеджера</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Бюджет на ProSale</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Выделенная зона в каталоге Premium</span></div>
+                        <div class="tariff-price"><div class="d-lg-none">Полная цена</div></div>
+                        <div class="tariff-price"><div class="d-lg-none">Специальная цена</div><div class="special-price"><span>105 000</span> Тг/год</div></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg tariff">
+                    <div class="box grid-box">
+                        <div class="tariff-name">Спецпредложение<div class="name">Профи</div></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Полнофункциональный интернет-магазин</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Размещение 10 000 товарных позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Возможность расширения количества позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Мобильная версия сайта</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Поддержка персонального менеджера</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Бюджет на ProSale</span><span class="flag">30 000 Тг</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Выделенная зона в каталоге Premium</span></div>
+                        <div class="tariff-price"><div class="d-lg-none">Полная цена</div><div class="old-price"><span>165 000</span> Тг/год</div></div>
+                        <div class="tariff-price"><div class="d-lg-none">Специальная цена</div><div class="special-price"><span>105 000</span> Тг/год</div></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg tariff">
+                    <div class="box grid-box">
+                        <div class="tariff-name">Спецпредложение<div class="name">Престиж</div></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Полнофункциональный интернет-магазин</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Размещение 10 000 товарных позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Возможность расширения количества позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Мобильная версия сайта</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Поддержка персонального менеджера</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Бюджет на ProSale</span><span class="flag">30 000 Тг</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Выделенная зона в каталоге Premium</span><span class="flag">30 000 Тг</span></div>
+                        <div class="tariff-price"><div class="d-lg-none">Полная цена</div><div class="old-price"><span>165 000</span> Тг/год</div></div>
+                        <div class="tariff-price"><div class="d-lg-none">Специальная цена</div><div class="special-price"><span>105 000</span> Тг/год</div></div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl">
+                    <div class="box online-chat-btn">
+                        <div class="order-md-2 order-xl-1 block-title">Не уверены какое  предложение для вас?</div>
+                        <div class="order-md-1 order-xl-2"><div class="img-round"><img src="./images/ears.png" alt="headphone" height="48" width="48"></div></div>
+                        <div class="order-3">Получите консультацию  у персонального менеджера</div>
+                        <div class="order-4"><button class="btn btn-primary" type="button">Задать вопрос</button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="contact-us">
+                <div class="title">Заполните форму и ваш менеджер свяжется с вами</div>
+                <form action="">
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 col-lg"><input type="text" class="form-control" placeholder="Ваше имя"></div>
+                        <div class="col-12 col-md-6 col-lg"><input type="text" class="form-control" placeholder="Телефон"></div>
+                        <div class="col-12 col-md-6 col-lg"><input type="text" class="form-control" placeholder="Email"></div>
+                        <div class="col-12 col-md-6 col-lg-auto"><button class="btn btn-block btn-warning" type="submit">Отправить заявку</button></div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="1" id="agree">
+                        <label for="agree" class="form-check-label">
+                            Я соглашаюсь с <a href="#">пользовательским соглашением</a> и <a href="#">политикой конфеденциальности</a>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="subscribe">
+            <form action="#">
+                <div class="form-row">
+                    <div class="col-12 col-lg title">Узнавайте о выгодных предложениях и новостях первыми</div>
+                    <div class="col-12 col-md"><input type="email" class="form-control" name="email"></div>
+                    <div class="col-12 col-md"><button class="btn btn-primary" type="submit">Подписаться</button></div>
+                </div>
+            </form>
+        </section>
+
+    </div>
+    <footer>
+        <div class="footer-socials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 fas fa-phone-volume"></i>0900 800 45 45</div>
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 far fa-envelope"></i>example@mail.ru</div>
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 fas fa-map-marker-alt"></i>ул. Аванова 32б оф.234</div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-12 text-center text-lg-right icons">
+                        <i class="mr-3 fab fa-facebook-f"></i>
+                        <i class="mr-3 fab fa-vk"></i>
+                        <i class="mr-3 fab fa-youtube"></i>
+                        <i class="mr-3 fab fa-skype"></i>
+                        <i class="mr-3 fab fa-whatsapp"></i>
+                        <i class="mr-3 fab fa-telegram-plane"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-nav-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Электроника</h3>
+                        <ul>
+                            <li><a href="">Мобильные телефоны</a></li>
+                            <li><a href="">Планшеты</a></li>
+                            <li><a href="">Ноутбуки</a></li>
+                            <li><a href="">Бытовая техника</a></li>
+                            <li><a href="">Камеры, фото и видео </a></li>
+                            <li><a href="">Телевизоры</a></li>
+                            <li><a href="">Наушники</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Мода</h3>
+                        <ul>
+                            <li><a href="">Женская мода</a></li>
+                            <li><a href="">Мужская мода</a></li>
+                            <li><a href="">Мода для девочек</a></li>
+                            <li><a href="">Мода для малчиков</a></li>
+                            <li><a href="">Часы</a></li>
+                            <li><a href="">Ювелирные изделия</a></li>
+                            <li><a href="">Женские сумочки</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Дом и кухня</h3>
+                        <ul>
+                            <li><a href="">Ванна</a></li>
+                            <li><a href="">Домашний декор</a></li>
+                            <li><a href="">Кухня и столовая</a></li>
+                            <li><a href="">Инструменты</a></li>
+                            <li><a href="">Аудио и видео</a></li>
+                            <li><a href="">Мебель</a></li>
+                            <li><a href="">Патио. Газон и сад</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Красота</h3>
+                        <ul>
+                            <li><a href="">Духи</a></li>
+                            <li><a href="">Макияж</a></li>
+                            <li><a href="">Уход за кожей</a></li>
+                            <li><a href="">Инструменты и акссесуары</a></li>
+                            <li><a href="">Для мужчин</a></li>
+                            <li><a href="">Витамины</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Для детей</h3>
+                        <ul>
+                            <li><a href="">Коляски</a></li>
+                            <li><a href="">Автокресла</a></li>
+                            <li><a href="">Питание</a></li>
+                            <li><a href="">Купинае и уход за кожей</a></li>
+                            <li><a href="">Детская одежда и обувь</a></li>
+                            <li><a href="">Детские игрушки</a></li>
+                            <li><a href="">Детское питание</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Бренды</h3>
+                        <ul>
+                            <li><a href="">Mothercare</a></li>
+                            <li><a href="">Apple</a></li>
+                            <li><a href="">Nike</a></li>
+                            <li><a href="">Samsung</a></li>
+                            <li><a href="">Tefal</a></li>
+                            <li><a href="">L'oreal Paris</a> </li>
+                            <li><a href="">Skechers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-8 col-12 order-lg-first order-last text-center text-lg-left">2017 QRP.com. All rights reserved</div>
+                    <div class="col-lg-4 col-12 order-lg-last order-first text-center text-lg-right">
+                        <ul>
+                            <li><a href="">Карьера</a></li>
+                            <li><a href="">Гарантии</a></li>
+                            <li><a href="">Условия использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./script_components.js"></script>
+</body>
+<!--<i class="far fa-comment"></i>-->
+
+</html>

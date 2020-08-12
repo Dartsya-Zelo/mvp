@@ -1,0 +1,629 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>1 MVP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="./bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./bcSwipe/jquery.bcSwipe.min.js"></script>
+</head>
+
+<body>
+    <header>
+
+        <div class="header-nav-top d-none d-md-block">
+            <div class="container">
+                <div class="text-right">
+                    <a href="#">О компании</a>
+                    |
+                    <span class="login" data-contents="#head-login-lg" data-toggle="popover">Вход <i class="fas fa-sort-down"></i></span>
+                    |
+                    <a href="#">RU</a>
+                </div>
+            </div>
+        </div>
+        <div style="display: none;">
+            <div id="head-login-lg">
+                <form action="" style="padding: 1.5em 1.5em 0.5em">
+                    <div class="form-group"><input type="email" class="form-control" placeholder="Email"></div>
+                    <div class="form-group"><input type="password" class="form-control" placeholder="Пароль"></div>
+                    <div class="form-group"><button class="btn btn-block btn-primary" type="submit">Войти</button></div>
+                    <div class="form-group"><a href="#" class="btn btn-block btn-primary">Зарегистрироваться</a></div>
+                    <div class="text-center"><a href="#" class="forgot text-info">Забыли пароль?</a></div>
+                </form>
+            </div>
+        </div>
+        <div id="top-navbar" class="collapse d-md-none">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col text-left">
+                        <a class="mr-4" href="#"><span class="logo"></span></a>
+                    </div>
+                    <div class="col text-right">
+                        <a href="#" class="close" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">&times;</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 main-menu">
+                        <div class="search-form">
+                            <form action="#">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <select class="custom-select">
+                                            <option value="catgory" selected>Категории</option>
+                                            <option value="product">Товары</option>
+                                            <option value="">....</option>
+                                        </select>
+                                    </div>
+                                    <input class="form-control" type="search" placeholder="" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-link search" type="submit"></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="login">
+                            <a data-toggle="collapse" href="#header-account-sm" role="button" aria-expanded="false" aria-controls="header-account-sm">Имя</a>
+                            <div id="header-account-sm" class="collapse">
+                                <form action="">
+                                    <div class="form-group"><input type="email" class="form-control" placeholder="Email"></div>
+                                    <div class="form-group"><input type="password" class="form-control" placeholder="Пароль"></div>
+                                    <div class="form-group"><button class="btn btn-block btn-outline-light" type="submit">Войти</button></div>
+                                    <div class="form-group"><a href="#" class="btn btn-block btn-outline-light">Зарегистрироваться</a></div>
+                                    <div class="form-group text-center"><a href="#" class="forgot">Забыли пароль?</a></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="language">
+                            Выберите язык
+                            <span class="badge">
+                                <!-- alternative without link for current language -->
+                                <span>RU</span>
+                                <!-- <a href="#" class="current">RU</a> -->
+                                <a href="#">EN</a>
+                            </span>
+                        </div>
+                        <div class="link">
+                            <a href="#">О компании</a>
+                        </div>
+                        <div class="cart-block">
+                            <a href="#">Корзина</a><span>8 000 руб</span>
+                        </div>
+                        <div>
+                            <div class="order-btn"><button type="button" class="btn btn-outline-light btn-block">Заявки</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-top-menu">
+            <nav class="navbar navbar-light navbar-expand-md">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="d-md-none navbar-sm-custom">
+                        <a class="navbar-brand" href="#"><span class="logo"></span></a>
+                        <div class="navbar-text">
+                            <button class="btn btn-link my-2 my-sm-0 search" type="submit"></button>
+                            <div class='counter'>
+                                <span class="cart"></span><span>3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <a class="navbar-brand mr-4 mr-md-3" href="#"><span class="logo"></span></a>
+                        <form style="flex-grow: 2">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <select class="custom-select">
+                                        <option value="catgory" selected>Категории</option>
+                                        <option value="product">Товары</option>
+                                        <option value="">....</option>
+                                    </select>
+                                </div>
+                                <input class="form-control" type="search" placeholder="" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-link my-2 my-sm-0 search" type="submit"></button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="navbar-text mr-4 ml-4 mr-md-2 ml-md-2" id="cart">
+                            <div class='counter mr-2'>
+                                <span class="cart"></span><span>3</span></div>
+                                <div class="d-none d-lg-inline d-xl-inline">800 RUR</div>
+                        </div>
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" id="orders" type="submit">Заявки</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <section class="steps seller">
+            <div class="jumbotron text-center">
+                <div class="title">Как начать продавать на Qorp.com</div>
+                <div class="row justify-content-md-center">
+                    <div class="details col">
+                        <div class="row">
+                            <div class="col-6 col-md-3">
+                                <div class="image"><img src="./images/step-seller-1.png" alt="step-1" width="73" height="74"></div>
+                                <div class="text">Создайте сайт<br>или инет-магазин</div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="image"><img src="./images/step-seller-2.png" alt="step-2" width="73" height="74"></div>
+                                <div class="text">Получите профессиональную<br>помощь менеджера</div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="image"><img src="./images/step-seller-3.png" alt="step-3" width="73" height="74"></div>
+                                <div class="text">Добавьте товары<br>или услуги</div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="image"><img src="./images/step-seller-4.png" alt="step-4" width="73" height="74"></div>
+                                <div class="text">Принимайте<br>заказы</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center"><button type="button" class="btn btn-lg btn-primary">Смотреть видео</button></div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="contact-us">
+                <div class="title">14 дней бесплатного тестового периода</div>
+                <form action="">
+                    <div class="form-row">
+                        <div class="col-12 col-md"><input type="text" class="form-control" placeholder="Название компании"></div>
+                        <div class="col-12 col-md"><input type="email" class="form-control" placeholder="Email компании"></div>
+                        <div class="col-12 col-md-auto"><button class="btn btn-block btn-warning" type="submit">Создать сайт</button></div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="1" id="agree">
+                        <label for="agree" class="form-check-label">
+                            Я соглашаюсь с <a href="#">пользовательским соглашением</a> и <a href="#">политикой конфеденциальности</a>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section>
+            <div class="icon-block">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-5 offset-lg-1">
+                        <div class="media">
+                            <img src="./images/icon-tool.png" alt="" class="mr-3">
+                            <div class="media-body">
+                                более <div class="count">40052</div> производителей из 82 стран
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="media">
+                            <img src="./images/icon-glass.png" alt="" class="mr-3">
+                            <div class="media-body">
+                                более <div class="count">400 000</div> просмотреов в месяц от оптовых заказчиков
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="title"><div>Заявки от заказчиков</div></div>
+            <div class="row zayavki">
+                <div class="col-12 col-xl-auto">
+                    <div class="about-rewievs box">
+                        <div class="item">
+                            <div class="review-title"><img src="./images/flag_ua.png" alt="">Diana</div>
+                            Компания закупает: Цинк в чушках марки: ЦВО, ЦАО,ЦО, 1000-2000 тонн в месяц, условия поставки FCA склада продовца
+                        </div>
+                        <div class="item">
+                            <div class="review-title"><img src="./images/flag_ru.png" alt="">Artem</div>
+                            1000 тонн рафинированного подсолнечного масло ежемесячно. Договор минимум на один год.
+                        </div>
+                        <div class="item">
+                            <div class="review-title"><img src="./images/flag_ua.png" alt="">Diana</div>
+                            Компания закупает: Цинк в чушках марки: ЦВО, ЦАО,ЦО, 1000-2000 тонн в месяц, условия поставки FCA склада продовца
+                        </div>
+                        <div class="item">
+                            <div class="review-title"><img src="./images/flag_ru.png" alt="">Artem</div>
+                            1000 тонн рафинированного подсолнечного масло ежемесячно. Договор минимум на один год.
+                        </div>
+                        <div class="item">
+                            <div class="review-title"><img src="./images/flag_ua.png" alt="">Diana</div>
+                            Компания закупает: Цинк в чушках марки: ЦВО, ЦАО,ЦО, 1000-2000 тонн в месяц, условия поставки FCA склада продовца
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl boxes-block">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <div class="box">
+                                <img src="./images/icon-cup.png" alt="">
+                                <div>Заказчик обьявляет  конкурс на закупку товаров и услуг</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="box">
+                                <img src="./images/icon-label.png" alt="">
+                                <div>Поставщики предлагают цены  и условия поставки</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="box">
+                                <img src="./images/step-3.png" alt="">
+                                <div>Заказчик выбирает подходящее  предложение</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="box">
+                                <img src="./images/step-2.png" alt="">
+                                <div>Поставщику приходят уведомления о поступающих заказах в выбранных категориях</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-md-auto">
+                            <button class="btn btn-primary mr-3" type="button">Создать тендер</button>
+                        </div>
+                        <div class="col-6 col-md-auto">
+                            <button class="btn btn-info mr-3" type="button">Найти заказы</button>
+                        </div>
+                        <div class="col-12 col-md-auto d-flex align-items-center">
+                            <a href="#" class="text-info alt">Подробнее о тендерах</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="title"><div>Предложения для роста продаж</div></div>
+            <div class="row suggestions">
+                <div class="col-3 col-xl-3 d-none d-lg-flex">
+                    <div class="grid-box">
+                        <div class="tariff-name"></div>
+                        <div class="tariff-item">Полнофункциональный интернет-магазин</div>
+                        <div class="tariff-item">Размещение 10 000 товарных позиций</div>
+                        <div class="tariff-item">Возможность расширения количества позиций</div>
+                        <div class="tariff-item">Мобильная версия сайта</div>
+                        <div class="tariff-item">Поддержка персонального менеджера</div>
+                        <div class="tariff-item">Бюджет на ProSale</div>
+                        <div class="tariff-item">Выделенная зона в каталоге Premium</div>
+                        <div class="tariff-price">Полная цена</div>
+                        <div class="tariff-price">Специальная цена</div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg tariff">
+                    <div class="box grid-box">
+                        <div class="tariff-name">Пакет<div class="name">Базовый</div></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Полнофункциональный интернет-магазин</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Размещение 10 000 товарных позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Возможность расширения количества позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Мобильная версия сайта</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Поддержка персонального менеджера</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Бюджет на ProSale</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Выделенная зона в каталоге Premium</span></div>
+                        <div class="tariff-price"><div class="d-lg-none">Полная цена</div></div>
+                        <div class="tariff-price"><div class="d-lg-none">Специальная цена</div><div class="special-price"><span>105 000</span> Тг/год</div></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg tariff">
+                    <div class="box grid-box">
+                        <div class="tariff-name">Спецпредложение<div class="name">Профи</div></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Полнофункциональный интернет-магазин</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Размещение 10 000 товарных позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Возможность расширения количества позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Мобильная версия сайта</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Поддержка персонального менеджера</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Бюджет на ProSale</span><span class="flag">30 000 Тг</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Выделенная зона в каталоге Premium</span></div>
+                        <div class="tariff-price"><div class="d-lg-none">Полная цена</div><div class="old-price"><span>165 000</span> Тг/год</div></div>
+                        <div class="tariff-price"><div class="d-lg-none">Специальная цена</div><div class="special-price"><span>105 000</span> Тг/год</div></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg tariff">
+                    <div class="box grid-box">
+                        <div class="tariff-name">Спецпредложение<div class="name">Престиж</div></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Полнофункциональный интернет-магазин</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Размещение 10 000 товарных позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Возможность расширения количества позиций</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Мобильная версия сайта</span></div>
+                        <div class="tariff-item"><span class="flag"><i class="fas fa-check text-success"></i></span><span class="d-lg-none">Поддержка персонального менеджера</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Бюджет на ProSale</span><span class="flag">30 000 Тг</span></div>
+                        <div class="tariff-item-price"><span class="d-lg-none">Выделенная зона в каталоге Premium</span><span class="flag">30 000 Тг</span></div>
+                        <div class="tariff-price"><div class="d-lg-none">Полная цена</div><div class="old-price"><span>165 000</span> Тг/год</div></div>
+                        <div class="tariff-price"><div class="d-lg-none">Специальная цена</div><div class="special-price"><span>105 000</span> Тг/год</div></div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl">
+                    <div class="box online-chat-btn">
+                        <div class="order-md-2 order-xl-1 block-title">Не уверены какое  предложение для вас?</div>
+                        <div class="order-md-1 order-xl-2"><div class="img-round"><img src="./images/ears.png" alt="headphone" height="48" width="48"></div></div>
+                        <div class="order-3">Получите консультацию  у персонального менеджера</div>
+                        <div class="order-4"><button class="btn btn-primary" type="button">Задать вопрос</button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="title"><div>Все, что нужно для ведения бизнеса в интернете</div></div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-xl-5 offset-xl-1">
+                    <div class="subtitle"><span class="img-round"><img src="./images/icon-megafone.png" alt=""></span>Продвижение</div>
+                    <ul class="check-list">
+                        <li>автоматическая индексация сайта в поисковых системах</li>
+                        <li>мобильная версия сайта</li>
+                        <li>инструменты web-мастера</li>
+                        <li>реклама ProSale на портале Satu.kz</li>
+                        <li>email-рассылки</li>
+                        <li>настройка акций для клиентов</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="subtitle"><span class="img-round"><img src="./images/icon-cart.png" alt=""></span>E-commerce</div>
+                    <ul class="check-list">
+                        <li>настраиваемая корзина заказов</li>
+                        <li>настройка способов оплаты и доставки</li>
+                        <li>импорт товаров из excel и yml, 1C, Мой склад</li>
+                        <li>обработка и управление заказами</li>
+                        <li>мобильное приложение</li>
+                        <li>SMS-уведомления о заказах</li>
+                        <li>управление списком клиентов</li>
+                        <li>онлайн-чаты</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                <div>Ваш сайт привлекательный и удобный для покупателей</div>
+            </div>
+            <div class="title-text">200+ шаблонов дизайнов</div>
+            <div id="promoSlider" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img width="1380" height="660" class="img-fluid" src="./images/slider_2.jpg" alt="First slide">
+                        
+                    </div>
+                    <div class="carousel-item">
+                        <img width="1380" height="660" class="img-fluid" src="./images/slider_2.jpg" alt="Second slide">
+                        
+                    </div>
+                    <div class="carousel-item">
+                        <img width="1380" height="660" class="img-fluid" src="./images/slider_2.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#promoSlider" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#promoSlider" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        <section>
+            <div class="title">
+                <div>Отзывы наших клиентов</div>
+            </div>
+            <div id="feedbackCarousel" class="carousel slide multi-carousel" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner row" role="listbox">
+                    <div class="carousel-item col-12 col-md-6 col-lg-4 active">
+                        <div class="feedback-block">
+                            <div class="feedback-head row">
+                                <div class="col">
+                                    <div class="feedback-title">Вадим Селюн</div>
+                                    ТОО "ШЫГЫСПРОМКОМПЛЕКТ"
+                                </div>
+                                <div class="col-auto"><img src="./images/avatar-1.png" alt=""></div>
+                            </div>
+                            <div class="feedback-body">Отличный сервис! Долго решались стоит ли переходить на платный тариф. Перешли в мае 2016 года, сейчас могу сказать, что это было верное решение. Поток входящих звонков по размещенным позициям увеличился примерно на 20%. Количество заказов на сайте возросло на 15-17%. При условии что товар у нас не массового потребления, и SEO настроено напосредственно на целевую аудиторию. Впредь будем пользоваться услугами Satu.kz. Успехов и процветания вашему бизнесу!</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item col-12 col-md-6 col-lg-4">
+                        <div class="feedback-block">
+                            <div class="feedback-head row">
+                                <div class="col">
+                                    <div class="feedback-title">Рафаэль Сафиев</div>
+                                    ТОО Империя-Пром
+                                </div>
+                                <div class="col-auto"><img src="./images/avatar-2.png" alt=""></div>
+                            </div>
+                            <div class="feedback-body">Отличный сервис! Долго решались стоит ли переходить на платный тариф. Перешли в мае 2016 года, сейчас могу сказать, что это было верное решение. Поток входящих звонков по размещенным позициям увеличился примерно на 20%. Количество заказов на сайте возросло на 15-17%. При условии что товар у нас не массового потребления, и SEO настроено напосредственно на целевую аудиторию. Впредь будем пользоваться услугами Satu.kz. Успехов и процветания вашему бизнесу!</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item col-12 col-md-6 col-lg-4">
+                        <div class="feedback-block">
+                            <div class="feedback-head row">
+                                <div class="col">
+                                    <div class="feedback-title">Вадим Селюн</div>
+                                    ТОО "ШЫГЫСПРОМКОМПЛЕКТ"
+                                </div>
+                                <div class="col-auto"><img src="./images/avatar-1.png" alt=""></div>
+                            </div>
+                            <div class="feedback-body">Отличный сервис! Долго решались стоит ли переходить на платный тариф. Перешли в мае 2016 года, сейчас могу сказать, что это было верное решение. Поток входящих звонков по размещенным позициям увеличился примерно на 20%. Количество заказов на сайте возросло на 15-17%. При условии что товар у нас не массового потребления, и SEO настроено напосредственно на целевую аудиторию. Впредь будем пользоваться услугами Satu.kz. Успехов и процветания вашему бизнесу!</div>
+                        </div>
+                    </div>
+                    <div class="carousel-item col-12 col-md-6 col-lg-4">
+                        <div class="feedback-block">
+                            <div class="feedback-head row">
+                                <div class="col">
+                                    <div class="feedback-title">Рафаэль Сафиев</div>
+                                    ТОО Империя-Пром
+                                </div>
+                                <div class="col-auto"><img src="./images/avatar-2.png" alt=""></div>
+                            </div>
+                            <div class="feedback-body">Отличный сервис! Долго решались стоит ли переходить на платный тариф. Перешли в мае 2016 года, сейчас могу сказать, что это было верное решение. Поток входящих звонков по размещенным позициям увеличился примерно на 20%. Количество заказов на сайте возросло на 15-17%. При условии что товар у нас не массового потребления, и SEO настроено напосредственно на целевую аудиторию. Впредь будем пользоваться услугами Satu.kz. Успехов и процветания вашему бизнесу!</div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#feedbackCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next text-faded" href="#feedbackCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        <section class="box">
+            <div class="title">
+                <div>Часто задаваемые вопросы</div>
+            </div>
+            <div class="faq-block">
+                <div class="row">
+                    <div class="faq col-12 col-md-6">
+                        <div class="faq-title">Как зарегистрироваться?</div>
+                        Отличный сервис! Долго решались стоит ли переходить на платный тариф. Перешли в мае 2016 года, сейчас могу сказать, что это было верное решение. Поток входящих звонков по размещенным позициям увеличился примерно на 20%. Количество заказов на сайте возросло на 15-17%. При условии что товар у нас не массового потребления, и SEO настроено напосредственно на целевую аудиторию. Впредь будем пользоваться услугами Satu.kz. Успехов и процветания вашему бизнесу!
+                    </div>
+                    <div class="faq col-12 col-md-6">
+                        <div class="faq-title">Как зарегистрироваться?</div>
+                        Отличный сервис! Долго решались стоит ли переходить на платный тариф. Перешли в мае 2016 года, сейчас могу сказать, что это было верное решение. Поток входящих звонков по размещенным позициям увеличился примерно на 20%. Количество заказов на сайте возросло на 15-17%. При условии что товар у нас не массового потребления, и SEO настроено напосредственно на целевую аудиторию. Впредь будем пользоваться услугами Satu.kz. Успехов и процветания вашему бизнесу!
+                    </div>
+                    <div class="faq col-12 col-md-6">
+                        <div class="faq-title">Как изменить номер телефона, указанный при регистрации Кабинета компании?</div>
+                        Отличный сервис! Долго решались стоит ли переходить на платный тариф. Перешли в мае 2016 года, сейчас могу сказать, что это было верное решение. Поток входящих звонков по размещенным позициям увеличился примерно на 20%. Количество заказов на сайте возросло на 15-17%. При условии что товар у нас не массового потребления, и SEO настроено напосредственно на целевую аудиторию. Впредь будем пользоваться услугами Satu.kz. Успехов и процветания вашему бизнесу!
+                    </div>
+                    <div class="faq col-12 col-md-6">
+                        <div class="faq-title">Как изменить номер телефона, указанный при регистрации Кабинета компании?</div>
+                        Отличный сервис! Долго решались стоит ли переходить на платный тариф. Перешли в мае 2016 года, сейчас могу сказать, что это было верное решение. Поток входящих звонков по размещенным позициям увеличился примерно на 20%. Количество заказов на сайте возросло на 15-17%. При условии что товар у нас не массового потребления, и SEO настроено напосредственно на целевую аудиторию. Впредь будем пользоваться услугами Satu.kz. Успехов и процветания вашему бизнесу!
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="ask-manager">
+                <div class="title">Не знаете, что выбрать?</div>
+                <div class="title-text">Получите консультацию у персонального менеджера</div>
+                <button type="button" class="btn btn-primary mt-4 mb-2">Задать вопрос менеджеру</button>
+                <div><a href="#" class="text-info alt">Архив тарифных пакетов</a></div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="footer-socials">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 fas fa-phone-volume"></i>0900 800 45 45</div>
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 far fa-envelope"></i>example@mail.ru</div>
+                            <div class="col-lg-3 col-md-4"><i class="text-success mr-2 fas fa-map-marker-alt"></i>ул. Аванова 32б оф.234</div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 col-12 text-center text-lg-right icons">
+                        <i class="mr-3 fab fa-facebook-f"></i>
+                        <i class="mr-3 fab fa-vk"></i>
+                        <i class="mr-3 fab fa-youtube"></i>
+                        <i class="mr-3 fab fa-skype"></i>
+                        <i class="mr-3 fab fa-whatsapp"></i>
+                        <i class="mr-3 fab fa-telegram-plane"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-nav-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Электроника</h3>
+                        <ul>
+                            <li><a href="">Мобильные телефоны</a></li>
+                            <li><a href="">Планшеты</a></li>
+                            <li><a href="">Ноутбуки</a></li>
+                            <li><a href="">Бытовая техника</a></li>
+                            <li><a href="">Камеры, фото и видео </a></li>
+                            <li><a href="">Телевизоры</a></li>
+                            <li><a href="">Наушники</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Мода</h3>
+                        <ul>
+                            <li><a href="">Женская мода</a></li>
+                            <li><a href="">Мужская мода</a></li>
+                            <li><a href="">Мода для девочек</a></li>
+                            <li><a href="">Мода для малчиков</a></li>
+                            <li><a href="">Часы</a></li>
+                            <li><a href="">Ювелирные изделия</a></li>
+                            <li><a href="">Женские сумочки</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Дом и кухня</h3>
+                        <ul>
+                            <li><a href="">Ванна</a></li>
+                            <li><a href="">Домашний декор</a></li>
+                            <li><a href="">Кухня и столовая</a></li>
+                            <li><a href="">Инструменты</a></li>
+                            <li><a href="">Аудио и видео</a></li>
+                            <li><a href="">Мебель</a></li>
+                            <li><a href="">Патио. Газон и сад</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Красота</h3>
+                        <ul>
+                            <li><a href="">Духи</a></li>
+                            <li><a href="">Макияж</a></li>
+                            <li><a href="">Уход за кожей</a></li>
+                            <li><a href="">Инструменты и акссесуары</a></li>
+                            <li><a href="">Для мужчин</a></li>
+                            <li><a href="">Витамины</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Для детей</h3>
+                        <ul>
+                            <li><a href="">Коляски</a></li>
+                            <li><a href="">Автокресла</a></li>
+                            <li><a href="">Питание</a></li>
+                            <li><a href="">Купинае и уход за кожей</a></li>
+                            <li><a href="">Детская одежда и обувь</a></li>
+                            <li><a href="">Детские игрушки</a></li>
+                            <li><a href="">Детское питание</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h3>Бренды</h3>
+                        <ul>
+                            <li><a href="">Mothercare</a></li>
+                            <li><a href="">Apple</a></li>
+                            <li><a href="">Nike</a></li>
+                            <li><a href="">Samsung</a></li>
+                            <li><a href="">Tefal</a></li>
+                            <li><a href="">L'oreal Paris</a> </li>
+                            <li><a href="">Skechers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-8 col-12 order-lg-first order-last text-center text-lg-left">2017 QRP.com. All rights reserved</div>
+                    <div class="col-lg-4 col-12 order-lg-last order-first text-center text-lg-right">
+                        <ul>
+                            <li><a href="">Карьера</a></li>
+                            <li><a href="">Гарантии</a></li>
+                            <li><a href="">Условия использования</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./script_components.js"></script>
+</body>
+<!--<i class="far fa-comment"></i>-->
+
+</html>
