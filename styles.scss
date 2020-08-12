@@ -1,0 +1,284 @@
+/**
+ *
+ */
+@import "scss/fonts";
+@import "scss/definitions";
+
+/* $link-color: theme-color("primary") !default;*/
+/* $link-decoration: none !default;*/
+/* $link-hover-color: darken($link-color, 15%) !default;*/
+/* $link-hover-decoration: underline !default;*/
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "scss/variables";
+
+
+@import "bootstrap/scss/mixins";
+@import "scss/functions";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/input-group";
+@import "bootstrap/scss/custom-forms";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/jumbotron";
+/* @import "bootstrap/scss/alert";*/
+/* @import "bootstrap/scss/progress";*/
+@import "bootstrap/scss/media";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+/* @import "bootstrap/scss/toasts";*/
+@import "bootstrap/scss/modal";
+/* @import "bootstrap/scss/tooltip";*/
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+/* @import "bootstrap/scss/spinners";*/
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/print";
+
+@import "scss/header";
+@import "scss/request";
+@import "scss/categories";
+@import "scss/card";
+@import "scss/carousel";
+// zayavki
+@import "scss/steps";
+@import "scss/gifanimation";
+@import "scss/examples";
+@import "scss/advantages";
+@import "scss/start";
+@import "scss/suggestions";
+@import "scss/contact-us";
+@import "scss/subscribe";
+@import "scss/icon-block";
+@import "scss/list-group";
+@import "scss/feedback";
+@import "scss/faq";
+// product
+@import "scss/product";
+@import "scss/rating";
+@import "scss/nav";
+// search page
+@import "scss/search";
+// Shopping cart page
+@import "scss/cart";
+@import "scss/breadcrumb";
+@import "scss/pagination";
+
+body {
+    position: relative;
+}
+
+section > .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    line-height: 1.2em;
+    font-weight: 600;
+    color: #303242;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    padding: 1.875rem 0;
+
+    @include media-breakpoint-down(md) {
+        font-size: 1.875rem;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        box-sizing: border-box;
+        min-width: 1rem;
+        height: 3px;
+        background: $primary;
+        flex-grow: 1;
+    }
+
+    &:before {
+        margin-right: 10px;
+    }
+
+    &:after {
+        margin-left: 10px;
+    }
+
+    div {
+        flex-grow: 0;
+        // flex-basis: 0;
+    }
+    & + .title-text {
+        font-size: 1.875rem;
+        text-align: center;
+        margin: -.5em auto .5em;
+        @include media-breakpoint-down(sm) {
+            font-size: 1.25rem;
+            margin: -1em auto 1em;
+        }
+    }
+}
+
+.look-for {
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    line-height: 3em;
+    font-family: Lato,$font-family-sans-serif;
+    a {
+        color: $carousel-control-color;
+        &::after {
+            content: '';
+            display: inline-block;
+            background-image: $view-all-icon-bg;
+            width: 22px;
+            height: 13px;
+            vertical-align: middle;
+            margin-left: 11px;
+            margin-bottom: 2px;
+        }
+    }
+}
+
+section + section,
+section + .container > section,
+.row + .row {
+    margin-top: $grid-gutter-width;
+}
+
+.footer-nav-menu {
+    h3 {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        font-size: 0.8125rem;
+        line-height: 1.5rem;
+    }
+    a {
+        color: #2a2f30;
+        &:hover {
+            color: $cyan;
+        }
+    }
+    @include media-breakpoint-between(md, lg) {
+        & .row > div {
+            padding-left: 40px;
+            margin-bottom: 40px;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        & .row {
+            h3 {
+                cursor: pointer;
+                & + ul {
+                    display: none;
+                }
+                &.on + ul {
+                    display: block;
+                }
+            }
+            & > div + div {
+                border-top: 1px solid #cbcbcb;
+                padding-top: $grid-gutter-width;
+            }
+        }
+    }
+}
+
+.footer-socials {
+    background-color: $white;
+    padding: 35px 0;
+    line-height: 1.625rem;
+    margin: 35px 0;
+    .icons {
+        text-align: right;
+        color: $cyan;
+        @include media-breakpoint-down(md) {
+            margin-top: 20px;
+        }
+        * {
+            font-size: 20px;
+        }
+    }
+}
+
+.footer-copyright {
+    background: #303242;
+    color: #d8d9dc;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    ul {
+        list-style: none;
+        margin-bottom: 0;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 10px;
+        }
+        li {
+            display: inline;
+            a {
+                color: #d8d9dc;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+.custom-select,
+.form-control {
+    border-radius: 0;
+}
+
+.btn {
+    font-size: 0.9375rem;
+}
+.btn-lg,
+.btn-group-lg > .btn {
+    font-size: 1.125rem;
+}
+
+.subtitle {
+    font-size: 1.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: .2em;
+    .img-round {
+        position: relative;
+        display: inline-flex;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 50%;
+        background-color: $white;
+        border: 1px solid rgba($black, .1);
+        width: 60px;
+        height: 60px;
+        margin-right: 0.75em;
+        img {
+            margin: auto;
+        }
+    }
+}
+a.alt {
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,27 @@
+.breadcrumb {
+    .breadcrumb-item a {
+        color: rgba(48, 50, 66, .59);
+    }
+    @include media-breakpoint-down(md) {
+        .breadcrumb-item {
+            display: none;
+            &:nth-last-child(2) {
+                display: list-item;
+                padding: 0;
+                &::before {
+                    display: none;
+                }
+                & a::before {
+                    content: '<';
+                    border: 1px solid $border-color;
+                    display: inline-block;
+                    width: 1.5rem;
+                    text-align: center;
+                    margin-right: .5rem;
+                    vertical-align: baseline;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

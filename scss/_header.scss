@@ -1,0 +1,368 @@
+header {
+    margin-bottom: 20px;
+    background-color: #e9eef1;
+    box-shadow: 0 2px 2px rgba(48, 50, 66, 0.2);
+    min-height: 101px;
+
+    .navbar > .container {
+        flex-wrap: nowrap;
+    }
+    .nav-top-menu {
+        .navbar {
+            background-color: rgba(44, 48, 77, 0);
+            @include transition(background .4s ease);
+            &.fixed-top {
+                @include media-breakpoint-up(md) {
+                    background-color: rgba(44, 48, 77, .82);
+                }
+            }
+        }
+    }
+    .input-group {
+        border-bottom: 1px solid #303242;
+
+        input {
+            border: none;
+            background: transparent;
+            &:focus {
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+
+        .custom-select {
+            padding-left: 0;
+            border: none;
+            background-color: transparent;
+            text-transform: uppercase;
+            color: $primary;
+            font-size: 0.875rem;
+            font-weight: 700;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+    .search {
+        padding-left: 0;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 27px;
+            height: 27px;
+            background: transparent url("../images/search.png") no-repeat 50% 50%;
+            margin-bottom: -8px;
+        }
+    }
+    .cart::before {
+        content: "";
+        display: inline-block;
+        width: 32px;
+        height: 30px;
+        background: transparent url("../images/cart.png") no-repeat 50% 50%;
+    }
+    .logo {
+        vertical-align: top;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 187px;
+            height: 47px;
+            position: relative;
+            background: transparent url("../images/logo.png") no-repeat 50% 50%;
+        }
+    }
+    .fixed-top {
+        @include media-breakpoint-down(sm) {
+            position: relative;
+        }
+        @include media-breakpoint-up(md) {
+            color: $white;
+            .search::before {
+                background-image: url("../images/search-white.png");
+            }
+            .cart::before {
+                background-image: url("../images/cart-white.png");
+            }
+            .logo::before {
+                width: 243px;
+                height: 62px;
+                position: relative;
+                bottom: -9px;
+                background-image: url("../images/logo-white.png");
+            }
+            .input-group {
+                border-bottom-color: $white;
+            }
+            .form-control,
+            .custom-select {
+                color: $white;
+                option {
+                    color: $primary;
+                }
+            }
+            .custom-select {
+                background-image: $custom-select-indicator-white;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        min-height: auto;
+    }
+}
+
+.header-nav-top {
+    color: $white;
+    background-color: #303242;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 28px;
+    a {
+        color: $white;
+        margin: 0 1em;
+    }
+    .login {
+        cursor: pointer;
+        margin: 0 0 0 1em;
+        min-width: 48px;
+        display: inline-block;
+        * {
+            margin: 0 .2em 0 .5em;
+            position: relative;
+            top: -2px;
+        }
+    }
+}
+
+.counter {
+    position: relative;
+    display: inline-block;
+
+    span:not(.cart) {
+        position: absolute;
+        right: -3px;
+        top: -6px;
+        border-radius: 9px;
+        background-color: $primary;
+        color: $white;
+        font-size: 13px;
+        min-width: 18px;
+        line-height: 13px;
+        text-align: center;
+        height: 18px;
+        padding: 4px 0 3px;
+    }
+}
+
+
+#cart {
+    font-weight: 700;
+    div {
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+.navbar-sm-custom {
+    align-items: center;
+    .logo {
+        &::before {
+            width: 89px;
+            height: 23px;
+            background-size: 89px 23px;
+            top: 5px;
+        }
+    }
+    .search {
+        position: relative;
+        top: -5px;
+        padding-right: 3px;
+    }
+    .counter {
+        top: 6px;
+    }
+}
+
+#top-navbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #303242;
+    // background-color: rgba($black,.41);
+    color: $white;
+    z-index: 20;
+    // &::before {
+    //     content: '';
+    //     background-color: #303242;
+    //     position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: calc(50% - 60px);
+    // }
+
+    .logo::before {
+        position: relative;
+        bottom: -9px;
+        width: 180px;
+        height: 50px;
+        background-image: url("../images/logo-white.png");
+        background-size: 180px 50px;
+    }
+
+    .close {
+        color: $white;
+        text-decoration: none;
+        font-size: 7rem;
+        font-weight: 300;
+        line-height: 0.5em;
+        display: block;
+        text-transform: uppercase;
+        margin-right: -0.625rem;
+        &::before {
+            content: "\2573";
+            font-size: 2.5rem;
+            position: absolute;
+            background: #303242;
+            right: 0;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .search-form {
+        font-size: .75rem;
+        margin-bottom: 3.5em;
+        form {
+            border-bottom: 1px solid $white;
+        }
+        .input-group {
+            flex-wrap: nowrap;
+        }
+
+        .custom-select {
+            background-image: $custom-select-indicator-white;
+            font-size: .75rem;
+            padding-right: 14px;
+            background-size: 12px 9px;
+            background-position-x: 100%;
+        }
+        .btn.search {
+            padding-right: 0;
+            &::before {
+                background-image: url("../images/search-white.png");
+            }
+        }
+    }
+
+    .main-menu {
+        font-weight: 300;
+        > div {
+            > a {
+                line-height: 1.8em;
+            }
+            & + div + div {
+                padding-top: 18px;
+                border-top: 1px solid rgba($white, .22);
+            }
+        }
+    }
+
+    a:not(.btn) {
+        color: $white;
+    }
+    .account,
+    .login {
+        ul {
+            list-style-type: none;
+            padding-left: 14px;
+            margin-bottom: 1em;
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 0.9375rem;
+                padding-top: 1em;
+            }
+        }
+        .forgot {
+            color: $cyan;
+        }
+    }
+
+    .cart-block,
+    .language {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span.links {
+            a {
+                color: rgba($white, .3);
+                &.current {
+                    color: $white;
+                }
+            }
+            & > * + * {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .order-btn {
+        padding: 20px 14px;
+        .btn {
+            font-size: 1.125rem;
+        }
+    }
+}
+
+.popover-right {
+    left: 18px !important;
+  margin-top: $popover-arrow-height;
+
+  .arrow {
+    top: calc((#{$popover-arrow-height} + #{$popover-border-width}) * -1);
+  }
+
+  .arrow::before,
+  .arrow::after {
+    border-width: 0 ($popover-arrow-width / 2) $popover-arrow-height ($popover-arrow-width / 2);
+  }
+
+  .arrow::before {
+    top: 0;
+    border-bottom-color: $popover-arrow-outer-color;
+  }
+
+  .arrow::after {
+    top: $popover-border-width;
+    border-bottom-color: $popover-arrow-color;
+  }
+
+  // This will remove the popover-header's border just below the arrow
+  .popover-header::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: block;
+    width: $popover-arrow-width;
+    margin-left: ($popover-arrow-width / -2);
+    content: "";
+    border-bottom: $popover-border-width solid $popover-header-bg;
+  }
+}
+
+.account-links {
+    list-style-type: none;
+    padding: 0 5px;
+    min-width: 152px;
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.9375rem;
+        padding-top: 1em;
+    }
+}

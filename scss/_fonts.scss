@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'T-Star Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('T-Star Pro Regular'), local('T-Star-Pro-Regular'), url(../fonts/T-StarPro.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'T-Star Pro';
+    font-style: normal;
+    font-weight: 700;
+    src: local('T-Star Pro Bold'), local('T-Star-Pro-Bold'), url(../fonts/T-StarPro-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'T-Star Pro';
+    font-style: normal;
+    font-weight: 300;
+    src: local('T-Star Pro Light'), local('T-Star-Pro-Light'), url(../fonts/T-StarPro-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'T-Star Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: local('T-Star Pro Medium'), local('T-Star-Pro-Medium'), url(../fonts/T-StarPro-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(../fonts/Lato.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Lato Medium'), local('Lato-Medium'), url(../fonts/Lato-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Oswald Medium'), local('Oswald-Medium'), url(../fonts/Oswald-Medium.ttf) format('truetype');
+}
+

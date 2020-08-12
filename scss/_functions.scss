@@ -1,0 +1,138 @@
+@mixin make-selector($base, $item, $count) {
+    $selector: #{$base};
+    @for $i from 1 through $count {
+        $selector: #{$selector} + #{$item};
+    }
+    #{$selector} {
+        @content;
+    }
+}
+
+@mixin make-cascade-selector($base, $item, $count) {
+    $selector: #{$base};
+    $separator: ',';
+    @for $i from 1 through $count {
+        $subselector: #{$base};
+        @for $j from 1 through $i {
+            $subselector: #{$subselector} + #{$item};
+        }
+        $selector: #{$selector} #{$separator} #{$subselector};
+    }
+    #{$selector} {
+        @content;
+    }
+}
+
+@mixin make-multi-carousel($size) {
+    &.hide-controls {
+        .carousel-control-prev,
+        .carousel-control-next,
+        .carousel-indicators {
+            display: none !important;
+        }
+        .carousel-item {
+            display: flex;
+        }
+    }
+    .carousel-inner {
+        display: flex;
+    }
+    .carousel-item {
+        flex: 0 0 (100% / $size);
+        max-width: 100% / $size;
+        @include transition($carousel-transition);
+    }
+    @include make-cascade-selector('.active', '.carousel-item', $size - 1) {
+        display: block;
+    }
+    .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) {
+        &,
+        & ~ .carousel-item {
+            transition: none;
+            @supports (transform-style: preserve-3d) {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+    .carousel-item-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+
+    @include make-selector(".active.carousel-item", ".carousel-item", $size) {
+        position: absolute;
+        top: 0;
+        right: 100% / $size * -1;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    @include make-cascade-selector ('.carousel-item-next.carousel-item-left', '.carousel-item', $size) {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+    @include make-cascade-selector('.carousel-item-prev.carousel-item-right + .carousel-item', '.carousel-item', $size - 1) {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+
+@mixin repeat($item, $count){
+    $string: "";
+    @while $count > 0 {
+        $string: $string + $item;
+        $count: $count - 1;
+    }
+    content: $string;
+}
+
+@mixin make-rating ($max: 5) {
+    $star: "\2605";
+    .rating {
+        // display: flex;
+        // flex-wrap: nowrap;
+        font-size: 1.4rem;
+        &::after {
+            @include repeat($star, $max);
+            color: #e7ecef;
+            flex: 0 0 auto;
+        }
+        &::before {
+            content: "";
+            color: $yellow;
+            flex: 0 0 auto;
+        }
+        @for $i from 0 through $max {
+            &.rating-#{$i} {
+                &::before {
+                    @include repeat($star, $i);
+                }
+                &::after {
+                    @include repeat($star, $max - $i);
+                }
+            }
+        }
+    }
+}

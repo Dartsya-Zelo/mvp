@@ -1,0 +1,34 @@
+.feedback-block {
+	font-size: 0.875rem;
+	line-height: 1.125rem;
+	.feedback-head {
+		margin-bottom: 1.5rem;
+		font-width: 600;
+		font-size: 1.125rem;
+		.feedback-title {
+			text-transform: uppercase;
+			font-size: 1.875rem;
+			line-height:1.4em;
+		}
+		.col {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding-right: 0;
+		}
+		.col-auto {
+			padding-left: 0;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: 0.9375rem;
+        	.feedback-title {
+				font-size: 1.5625rem;
+        	}
+        }
+	}
+	@include media-breakpoint-down(sm) {
+    	.feedback-body {
+			padding: 0 $grid-gutter-width;
+    	}
+    }
+}

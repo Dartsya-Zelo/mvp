@@ -1,0 +1,57 @@
+$primary: #77bc1f;
+$green: #92C667;
+$cyan: #0098CE;
+$yellow: #F5C400;
+$body-bg: #f3f3f3;
+
+$grid-gutter-width: 20px;
+
+$carousel-control-width: 32px;
+$carousel-control-color: #4f5859;
+$carousel-control-opacity: .5;
+
+$carousel-control-icon-width: 32px;
+$carousel-indicator-width: 10px;
+$carousel-indicator-height: 10px;
+$carousel-indicator-active-bg: #76be43;
+// $carousel-transition: transform 10s ease;
+
+// $enable-rounded: false;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 320px,
+  md: 768px,
+  lg: 1200px,
+  xl: 1440px
+);
+$container-max-widths: (
+  sm: 300px,
+  md: 750px,
+  lg: 1160px,
+  xl: 1380px
+);
+
+$btn-font-weight: 700;
+
+$card-spacer-x: 12px;
+$card-border-radius: 0;
+$card-cap-bg: transparent;
+$zindex-popover: 1029;
+
+$jumbotron-padding: 1rem;
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-bg: none;
+
+$pagination-color: #303242;
+$pagination-border-width: 0;
+$pagination-bg: transparent;
+$pagination-hover-color: #fff;
+$pagination-hover-bg: #303242;
+$pagination-active-color: #fff;
+$pagination-active-bg: #303242;
+$pagination-disabled-color: #fff;
+$pagination-disabled-bg: #303242;
+
+$modal-content-border-radius: 0;

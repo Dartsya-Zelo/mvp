@@ -1,0 +1,64 @@
+.contact-us {
+    background-color: $cyan;
+    color: $white;
+    padding: 25px 50px;
+    .title {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1em;padding-bottom: 1.25rem;
+        @include media-breakpoint-down(md) {
+            font-size: 2.1875rem;
+            line-height: 2rem; 
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: 1.875rem;
+            text-align: left;
+        }
+    }
+    .form-row > * {
+        margin-bottom: 10px;
+    }
+    .form-check {
+        color: #f3f3f3;
+        font-size: 0.875rem;
+        padding-left: 2.5rem;
+        line-height: 1.875rem;
+        input[type="checkbox"] {
+            visibility: hidden;
+
+            & + label::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 1.875rem;
+                height: 1.875rem;
+                background-color: $white;
+                top: 0;
+                left: 0;
+                color: $primary;
+                text-align: center;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 700;
+                line-height: 1.875rem;
+            }
+            &:checked + label::before {
+                content: "\f00c";
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            line-height: 1.125rem;
+        }
+    }
+    a {
+        color: #f3f3f3;
+        text-decoration: underline;
+    }
+    @include media-breakpoint-down(md) {
+        padding: 40px 20px;
+    }
+    @include media-breakpoint-down(sm) {
+        padding: 20px 10px;
+    }
+}

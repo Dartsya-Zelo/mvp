@@ -1,0 +1,213 @@
+.category-title {
+    text-transform: uppercase;
+    color: #3d3d3d;
+    display: block;
+}
+
+.category-big-preview .category-title{
+    font-size: 40px;
+    font-weight: 600;
+}
+.category-small-preview  .category-title{
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.category-big-preview,
+.category-small-preview {
+    position: relative;
+
+    >a {
+        position: relative;
+        font-size: 20px;
+        color: #303242;
+        display: block;
+        &::before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 168, 206, .48);
+            z-index: 1;
+        }
+
+        &:hover {
+            text-decoration:none;
+            &::before {
+                content: '';
+            }
+        }
+        >span{
+            position: absolute;
+        }
+    }
+    @include media-breakpoint-between(sm, md) {
+        & a > img {
+            width: 100% !important;
+        }
+    }
+}
+
+.category-big-preview {
+    a > span {
+        top: 30px;
+        left: 40px;
+    }
+    @include media-breakpoint-between(sm, md) {
+        & + div {
+            margin-top: $grid-gutter-width;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        a {
+            overflow: hidden;
+            & > span {
+                left: 14px;
+                right: 14px;
+            }
+            img {
+                width: 670px !important;
+                max-width: 670px;
+                margin-left: -175px;
+            }
+        }
+    }
+}
+
+.category-small-preview {
+    &:nth-child(2n+1) {
+        a > span {
+            top: 10px;
+            left: 20px;
+        }
+    }
+
+    &:nth-child(2n) {
+        a > span {
+            bottom: 10px;
+            right: 20px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        & + & {
+            margin-top: $grid-gutter-width;
+        } 
+    }
+}
+
+.categories-list {
+    .look-for {
+        padding-right: $grid-gutter-width * 2;
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+        a {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 15;
+            }
+        }
+    }
+    .leave-request {
+        margin-top: 0;
+    }
+    @include media-breakpoint-between(md, md) {
+        .category ~ .category ~ .category {
+            margin-top: $grid-gutter-width;
+        }
+        .row-separator {
+            .ads {
+                margin-top: $grid-gutter-width;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .category ~ .category {
+            margin-top: 1rem;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .category {
+            max-width: 30%;
+        }
+        .subcategory {
+            min-width: 70%;
+            padding-left: $grid-gutter-width * 2.6;
+            padding-right: $grid-gutter-width * 1.5;
+            .category-carousel {
+                height: 100%;
+                .carousel-inner.row {
+                    width: auto;
+                    margin: -2rem -1rem;
+                    padding: 2rem 1rem;
+                    height: calc(100% + 4rem);
+                }
+                @include make-multi-carousel(4);
+                .carousel-item-prev.carousel-item-right,
+                .active.carousel-item.carousel-item-left + .carousel-item + .carousel-item + .carousel-item + .carousel-item {
+                    top: 2rem;
+                    bottom: 2rem;
+                    right: calc(1.5rem - 25%);
+                    width: calc(25% - .5rem);
+                }
+                .carousel-item-prev.carousel-item-right {
+                    right: auto;
+                    left: 1rem;
+                }
+            }
+        }
+        .carousel-control-prev {
+            left: -2 * $grid-gutter-width;
+            top: 2rem;
+            height: 100%;
+        }
+        .carousel-control-next {
+            right: -2 * $grid-gutter-width;
+            top: 2rem;
+            height: 100%;
+        }
+        .row-separator {
+            margin-top: $grid-gutter-width * 2 !important;
+            margin-right: $grid-gutter-width;
+        }
+    }
+    .card {
+        height: 100%;
+        justify-content: space-between;
+        z-index: 11;
+        @include transition($carousel-transition);
+        &:hover {
+            text-decoration: none;
+            transform: scale(1.2);
+            box-shadow: 0 0 2px rgba($black, .01);
+        }
+        .card-body {
+            display: flex;
+            align-items: center;
+            flex: 0 0 calc(3.25rem + 2 * #{$card-spacer-x});
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .card-title {
+            color: #303242;
+            font-size: 1.625rem;
+            font-weight: 600;
+            line-height: 1;
+            text-transform: uppercase;
+            margin: 0;
+            text-align: center;
+        }
+        .card-img-top {
+            height: auto;
+        }
+    }
+}

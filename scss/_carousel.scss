@@ -1,0 +1,107 @@
+.product-carousel {
+    .carousel-inner {
+        &.row {
+            width: auto;
+        }
+        .carousel-item {
+            @include transition($carousel-transition);
+            .card {
+                height: 100%;
+                .card-body{
+                    display: grid;
+                    grid-template-rows: 0 1fr 20px 20px;
+                    justify-content: space-between;
+                }
+                .card-img-top {
+                    margin-top: 40px;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include make-multi-carousel(6);
+        }
+
+        @include media-breakpoint-between(md, md) {
+            @include make-multi-carousel(3);
+        }
+
+        @include media-breakpoint-down(sm) {
+            .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) {
+
+                &,
+                & + .carousel-item,
+                & + .carousel-item + .carousel-item {
+                    transition: none;
+                    @supports (transform-style: preserve-3d) {
+                        transform: translate3d(0, 0, 0);
+                    }
+                }
+            }
+
+            .active.carousel-item + .carousel-item {
+                position: absolute;
+                top: 0;
+                right: -33.333334%;
+                z-index: 1;
+                display: block;
+                visibility: visible;
+            }
+            .active.carousel-item + .carousel-item + .carousel-item {
+                position: absolute;
+                top: 0;
+                right: -100%;
+                z-index: 1;
+                display: block;
+                visibility: visible;
+            }
+            .active.carousel-item-right + .carousel-item {
+                @supports (transform-style: preserve-3d) {
+                    transform: translate3d(100%, 0, 0);
+                }
+            }
+            .active + .carousel-item + .carousel-item {
+                @supports (transform-style: preserve-3d) {
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+            .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+            .active.carousel-item-left + .carousel-item-next.carousel-item-left + .carousel-item {
+                @supports (transform-style: preserve-3d) {
+                    transform: translate3d(-100%, 0, 0);
+                }
+                visibility: visible;
+                display: block;
+            }
+        }
+    }
+}
+
+.multi-carousel {
+    .carousel-control-prev {
+        left: -32px;
+    }
+    .carousel-control-next {
+        right: -32px;
+    }
+}
+
+.carousel-indicators {
+    li {
+        background-color: rgba(#303242, .34);
+        border-radius: 50%;
+    }
+}
+
+#feedbackCarousel {
+    .carousel-inner.row {
+        width: auto;
+    }
+    @include media-breakpoint-up(lg) {
+        @include make-multi-carousel(3);
+    }
+
+    @include media-breakpoint-between(md, md) {
+        @include make-multi-carousel(2);
+    }
+}

@@ -1,0 +1,118 @@
+.leave-request,
+.about-rewievs {
+    background-color: #ffffff;
+    border: 1px solid #e0e5e9;
+}
+
+.about-rewievs {
+    padding: 10px 20px 6px 14px;
+    &.box{
+        text-align: left;
+    }
+    .item {
+        color: #5a5c66;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.125rem;
+
+        &+.item {
+            padding-top: 10px;
+        }
+        
+        .review-title {
+            color: #303242;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            img {
+                dicplay: inline;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.leave-request {
+    padding: 10px 20px 0px 14px;
+
+    input {
+        font-size: 15px;
+        color: #5a5e66;
+    }
+
+    .form-title {
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #303042;
+        font-weight: 700;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin-top: $grid-gutter-width;
+    }
+
+}
+
+.zayavki {
+    .about-rewievs {
+        max-width: 480px;
+        height: 100%;
+    }
+    .boxes-block {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        .box {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: space-between;
+            padding: 2rem 1rem;
+        }
+        @include media-breakpoint-down(sm) {
+            .box {
+                padding: 2rem 1px;
+            }
+            .row > div + div ~ div {
+                margin-top: $grid-gutter-width;
+            }
+        }
+        img + div {
+            padding-top: 1.5rem;
+        }
+    }
+    @include media-breakpoint-down(lg) {
+        .about-rewievs {
+            max-width: 100%;
+        }
+        .boxes-block {
+            margin-top: $grid-gutter-width;
+        }
+    }
+}
+
+.ask-manager {
+    text-align: center;
+    color: #303242;
+    .title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .title-text {
+        font-size: 1.875rem;
+        font-weight: 600;
+
+    }
+    @include media-breakpoint-down(sm) {
+        .title {
+            font-size: 1.875rem;
+            line-height: 2.25rem;
+            padding: 3rem 1rem 1rem;
+        }
+        .title-text {
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+        }
+    }
+}

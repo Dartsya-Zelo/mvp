@@ -1,0 +1,22 @@
+.icon-block {
+    padding: 1rem 0;
+    .media {
+        padding: 0 1rem;
+        @include media-breakpoint-down(sm) {
+            padding: .75rem 0;
+        }
+    }
+    .media-body {
+        text-transform: uppercase;
+        color: #303242;
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.875rem;
+        .count {
+            font-size: 2.625rem;
+            font-weight: 700;
+            color: $primary;
+            line-height: 3rem;
+        }
+    }
+}

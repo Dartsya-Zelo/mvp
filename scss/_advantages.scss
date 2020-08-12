@@ -1,0 +1,12 @@
+.advantages {
+	color: #5a5c66;
+	margin-top: 20px;
+	& > div {
+		padding-bottom: 60px;
+	}
+	@include media-breakpoint-up(xl) {
+		& {
+			padding: 40px;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.subscribe {
+    margin-bottom: 60px;
+    .title {
+        text-transform: uppercase;
+        white-space: nowrap;
+        line-height: 2.25rem;
+        @include media-breakpoint-down(sm) {
+            white-space: normal;
+            line-height: 1.5em;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .form-row > * + * {
+            margin-top: .5em;
+            .btn {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

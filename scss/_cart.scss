@@ -1,0 +1,287 @@
+.cart-block {
+    .box {
+        height: auto;
+        text-align: left;
+        padding: $grid-gutter-width;
+        & + .box {
+            margin-top: $grid-gutter-width;
+        }
+        .title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .title-lg {
+            font-size: 1.5rem;
+            line-height: 2;
+            margin-bottom: 0;
+            > a {
+            	color: $cyan;
+            }
+            & + .collapse,
+            & + .collapsing {
+            	padding-top: 1rem;
+            }
+        }
+    }
+    .nav + .box {
+        border-top: 0 none;
+    }
+    @include media-breakpoint-down(md) {
+        > div ~ div {
+            margin-top: $grid-gutter-width;
+        }
+        .box {
+            padding: 1rem;
+            .title {
+                font-size: 1rem;
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .nav + .box {
+            // padding: 0 $grid-gutter-width;
+        }
+    }
+    .block {
+        border: 1px solid $border-color;
+        padding: .5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 600;
+        // justify-content: space-between;
+        & + .title,
+		& + .block {
+			margin-top: $grid-gutter-width;
+		}
+		.left,
+		.right {
+			display: flex;
+			align-items: center;
+        }
+        .left {
+            flex-direction: row-reverse;
+            justify-content: left;
+            width: 33.3333%;
+            img {
+                flex: 0 0 103px;
+            }
+    		.text-info {
+                margin-left: 1rem;
+    		}
+        }
+        .right {
+            width: 66.6667%;
+            justify-content: space-around;
+            .count {
+                font-size: 1.0625rem;
+            }
+            .form-control {
+                height: calc(1.8125rem + 2px);
+                width: 112px;
+                padding: 0.25rem 0.5rem;
+                font-size: 1.0625rem;
+                line-height: 1.5;
+                display: inline;
+                margin-right: .5rem;
+            }
+            .price {
+                font-size: 1.0625rem;
+                border: 1px solid $border-color;
+                padding: 0.25rem 0.4em;
+                width: 132px;
+                white-space: nowrap;
+            }
+            .separator {
+                border-left: 1px solid $border-color;
+                height: 2rem;
+                margin: auto -4%;
+            }
+        }
+        &.form-block {
+            display: block;
+            form {
+                .form-check,
+                .form-group:not(.row) {
+                    margin-left: 120px;
+                    @include media-breakpoint-down(md) {
+                        margin-left: 110px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        margin-left: 0;
+                    }
+                }
+                .form-check {
+                    font-size: 0.875rem;
+                    padding-left: 2.5rem;
+                    line-height: 1.875rem;
+                    margin-bottom: 1rem;
+                    input[type="checkbox"] {
+                        visibility: hidden;
+
+                        & + label::before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            background-color: $white;
+                            top: .125rem;
+                            left: 0;
+                            border: 1px solid $border-color;
+                            color: $primary;
+                            text-align: center;
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 700;
+                            line-height: 1.25rem;
+                        }
+                        &:checked + label::before {
+                            content: "\f00c";
+                        }
+                    }
+                    @include media-breakpoint-down(sm) {
+                        // line-height: 1.125rem;
+                    }
+                }
+                .textarea-counter {
+                    position: relative;
+                    &::after {
+                        content: attr(data-count);
+                        position: absolute;
+                        right: 1.5rem;
+                        bottom: .5rem;
+                        color: #87878f;
+                    }
+                }
+                textarea {
+                    resize: none;
+                }
+                .file-uploader {
+                    display: inline-flex;
+                    width: 100px;
+                    height: 100px;
+                    background: $white url("../images/icon-addfile.png") no-repeat 50% 1rem;
+                    border: 1px solid $border-color;
+                    align-items: flex-end;
+                    text-align: center;
+                    cursor: pointer;
+                    > input {
+                        display: none;
+                    }
+                    &::after {
+                        content: attr(data-text);
+                        font-size: 0.8125rem;
+                        font-weight: 400;
+                        line-height: 1;
+                        margin: 0 .5rem .4rem;
+                    }
+        			@include media-breakpoint-down(md) {
+        				width: 80px;
+        				height: 80px;
+        				background-position-y: .7rem;
+        				&::after {
+        					font-size: .65rem;
+        				}
+        			}
+        			@include media-breakpoint-down(sm) {
+        				width: 50px;
+        				height: 50px;
+        				background-size: 15px 15px;
+        				background-position-y: .3rem;
+        				&::after {
+        					margin: 0 0 .1rem;
+        				}
+        			}
+                }
+                .shrink {
+                    letter-spacing: -.04rem;
+                }
+            }
+        }
+        @include media-breakpoint-down(md) {
+            font-size: .75rem;
+            .left {
+                font-size: 1rem;
+                width: 45%;
+                img {
+                    flex: 0 0 86px;
+                }
+            }
+            .right {
+                width: 55%;
+                .count,
+                .form-control,
+                .price {
+                    font-size: .75rem;
+                }
+                .form-control {
+                    width: 56px;
+                }
+                .price {
+                    width: 84px;
+                }
+                .separator {
+                    margin: auto 0;
+                }
+            }
+            &.form-block {
+                form {
+                    .shrink {}
+                }
+            }
+        }
+        @include media-breakpoint-down(sm) {
+            align-items: stretch;
+            justify-content: space-between;
+            font-size: .6875rem;
+            .left,
+            .right {
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .left {
+                font-size: .625rem;
+                width: 48%;
+                align-items: start;
+                .text-info {
+                    margin-left: 0;
+                }
+            }
+            .right {
+                width: 50%;
+            	.count,
+            	.price {
+            		margin-right: auto;
+            	}
+            	.form-control,
+            	.price {
+            		width: 73px;
+            		height: calc(1.4375rem + 2px);
+            	}
+                .count,
+                .form-control,
+                .price {
+                    font-size: .625rem;
+                }
+                .separator {
+                    margin: 0;
+                    width: 100%;
+                    height: 0;
+                    border-top: 1px solid $border-color;
+                    border-left: 0 none;
+                }
+            }
+            &.form-block {
+                form {
+                    .shrink {}
+                }
+            }
+        }
+    }
+    .submit-btn {
+        text-align: right;
+        margin-top: $grid-gutter-width;
+    }
+}

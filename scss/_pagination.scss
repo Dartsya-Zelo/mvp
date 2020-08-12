@@ -1,0 +1,39 @@
+.pagination {
+	border-radius: 0;
+	margin-bottom: 0;
+	font-size: .75rem;
+	justify-content: center;
+	> * ~ * {
+		margin-left: .375rem;
+	}
+	> * > * {
+		border-radius: 0 !important;
+	}
+	.page-link {
+		display: block;
+		min-width: 1.9375rem;
+		text-align: center;
+	}
+    @include media-breakpoint-up (md) {
+		font-size: 1rem;
+		.page-link {
+			min-width: 2.25rem;
+		}
+		> * ~ * {
+			margin-left: .625rem;
+		}
+	}
+    @include media-breakpoint-up (lg) {
+		font-size: 1.125rem;
+		.page-link {
+			min-width: 2.4rem;
+		}
+		> * ~ * {
+			margin-left: .9375rem;
+		}
+	}
+}
+
+* + nav > .pagination {
+	margin-top: $grid-gutter-width;
+}

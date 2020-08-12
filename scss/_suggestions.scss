@@ -1,0 +1,137 @@
+.box-lg,
+.box {
+	background-color: $white;
+    color: #5a5c66;
+    box-shadow: 0 0 8px rgba($black, .1);
+    text-align: center;
+    border: 1px solid  $border-color;
+    .img-round {
+        background-color: $body-bg;
+        padding: 1.125rem;
+        border-radius: 50%;
+        margin: auto;
+    }
+    .block-title {
+        text-transform: uppercase;
+        color: $cyan;
+        font-weight: 700;
+        font-size: 1.125rem;
+    }
+}
+@include media-breakpoint-down(md) {
+    .box:not(.grid-box) {
+        padding: 1rem;
+    }
+    .box-lg {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+section.box {
+    padding: $grid-gutter-width;
+}
+.suggestions {
+    > div {
+        margin-bottom: $grid-gutter-width;
+    }
+    .grid-box {
+        display: grid;
+        grid-template-rows: 125px repeat(9, 1fr);
+        height: 100%;
+        padding-bottom: 10px;
+        > div {
+            display: flex;
+            align-items: center;
+        }
+        .tariff-name {
+            font-size: 1.5625rem;
+            flex-direction: column;
+            justify-content: center;
+            .name {
+                font-size: 2.1875rem;
+                text-transform: uppercase;
+            }
+        }
+        .tariff-item-price,
+        .tariff-price,
+        .tariff-item {
+            line-height: 1.125rem;
+            margin: .5em 0;
+            .flag {
+                min-width: 2.5rem;
+                & + * {
+                    text-align: left;
+                    width: 100%;
+                }
+            }
+            .old-price {
+                text-decoration: line-through;
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+        }
+        .tariff-price {
+            font-weight: 600;
+            .special-price {
+                font-weight: 600;
+                bottom: -8px;
+                position: relative;
+                span {
+                    font-size: 2.5rem;
+                    color: $cyan;
+                }
+            }
+        }
+        .tariff-price,
+        .tariff-item-price {
+            .flag {
+                font-size: 1.125rem;
+            }
+        }
+        &.box {
+            .tariff-item-price,
+            .tariff-price,
+            .tariff-item {
+                margin: .5em auto;
+            }
+            .tariff-name {
+                background-color: $cyan;
+                color: $white;
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        .tariff-item {
+            width: 100%;
+        }
+        .tariff-item-price,
+        .tariff-price {
+            flex-direction: column;
+            width: 100%;
+            & > *:first-child {
+                margin-bottom: .5rem;
+                max-width: 80%
+            }
+        }
+    }
+    .online-chat-btn {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1em;
+        div + div {
+            margin-top: 15px;
+        }
+        @include media-breakpoint-between(md, lg) {
+            flex-direction: row;
+            div + div {
+                margin-top: 0;
+            }
+        }
+        .btn {
+            font-weight: 700;
+        }
+    }
+}

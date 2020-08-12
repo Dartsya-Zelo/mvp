@@ -1,0 +1,45 @@
+.examples {
+	.media {
+		background-color: $white;
+		padding: $grid-gutter-width;
+		color: #5a5c66;
+		> img {
+			max-width: 150px;
+			margin-right: 1rem;
+		}
+		@include media-breakpoint-down(sm) {
+			& {
+				flex-direction: column;
+				text-align: center;
+				> img {
+					margin: 0 auto 20px;
+				}
+				.btn {
+					margin: 1em auto 0;
+				}
+			}
+		}
+		.media-body div {
+			text-align: left;
+		}
+		.props {
+			margin-top: .3em;
+			span {
+				color: #303242;
+			}
+			& + .props {
+				margin-top: 0;
+			}
+		}
+		.btn {
+			margin-top: 1em;
+			font-weight: 700;
+			font-size: 0.9375rem;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		> div + div {
+			margin-top: $grid-gutter-width;
+		}
+	}
+}
